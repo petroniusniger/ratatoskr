@@ -159,6 +159,7 @@ Sprint 001 is considered successful when:
 ## Next Sprint Preview
 
 Sprint 002 will likely focus on:
+
 - Understanding and testing Bluetooth device discovery
 - Exploring contacts API for VCF export
 - Initial car kit compatibility testing

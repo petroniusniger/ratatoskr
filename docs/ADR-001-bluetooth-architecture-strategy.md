@@ -8,6 +8,7 @@
 ## Context
 
 Ratatoskr aims to provide Bluetooth file transfer capabilities for Ubuntu Touch 20.04, with two primary goals:
+
 1. **Primary**: Send Contacts (VCF cards) to Bluetooth car kits
 2. **Secondary**: Bi-directional file transfer with PCs
 
@@ -31,11 +32,13 @@ Two previous implementations exist:
 ### Technical Considerations
 
 **OBEX Protocol Requirements**:
+
 - Car kits use OBEX Object Push Profile (OPP) for VCF reception
 - Ubuntu Touch 20.04 uses BlueZ stack with `bluez-obexd` daemon
 - Qt 5.12.9 provides `QBluetoothTransferManager` for OBEX OPP
 
 **Platform Constraints**:
+
 - Qt Bluetooth OBEX support on Linux: ✅ Full support
 - D-Bus interface to bluez-obexd: Required for incoming transfers
 - AppArmor security policies: Must be configured for Bluetooth access
@@ -56,16 +59,19 @@ Two previous implementations exist:
 ### Implementation Architecture
 
 **Outgoing Transfers** (Sending to car kit/PC):
+
 - Use Qt's `QBluetoothTransferManager`
 - OBEX Object Push Profile (OPP)
 - Queue-based transfer management
 
 **Incoming Transfers** (Receiving from PC):
+
 - D-Bus interface to `org.openobex` service
 - `ObexAgent` implementation for authorization
 - Automatic file management
 
 **File Types**:
+
 - VCF (vCard) - Primary focus for contacts
 - Generic file support - For PC transfers
 
