@@ -33,6 +33,7 @@ container managed by 'clickable'
 ## ADR Index
 
 - [ADR-001: Bluetooth File Transfer Architecture Strategy](docs/ADR-001-bluetooth-architecture-strategy.md) - 2025-12-18
+- [ADR-002: AppArmor Security Policy for Bluetooth Access](docs/ADR-002-apparmor-bluetooth-policy.md) - 2025-12-18
 
 # Versioning Strategy
 
