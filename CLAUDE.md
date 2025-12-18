@@ -1,14 +1,18 @@
 # Tech Stack
 
-- Language: C++
+Note: the compiler and related libraries are installed inside a docker
+container managed by 'clickable'
+
+- Language: GNU C++ 9.4.0
 - Libraries: 
-- Build tool: 
-- Emulator: clickable-ut 8.3.1 + docker 28.5.1
-- Testing: behave (BDD)
+  - Qt/QML 5.12.9
+- Build tool: `clickable build` in `ratatoskr/` subfolder
+- Emulator: clickable-ut 8.6.0 + docker 28.5.1
 
 # Project Structure
 
 - `docs/`: technical and project management documentation
+- `ratatoskr/`: project sources, header files, QML files, etc.
 - `templates/`: source files templates
 
 # Code Style

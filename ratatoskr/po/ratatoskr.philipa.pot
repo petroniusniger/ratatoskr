@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the ratatoskr.philipa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ratatoskr\n"
+"Project-Id-Version: ratatoskr.philipa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-17 02:22+0000\n"
+"POT-Creation-Date: 2025-12-18 11:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Hello World!"
+#: ../qml/Main.qml:39 ratatoskr.desktop.in.h:1
+msgid "Ratatoskr"
 msgstr ""
 
-msgid "Ratatoskr"
+#: ../qml/Main.qml:59
+msgid "Press the button below and check the logs!"
+msgstr ""
+
+#: ../qml/Main.qml:64
+msgid "Press here!"
+msgstr ""
+
+#: ../qml/Main.qml:75
+msgid "Version %1"
 msgstr ""
