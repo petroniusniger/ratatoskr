@@ -80,6 +80,7 @@ Build output: Package created successfully
 Build version: 251219104845
 
 **AppArmor Status**: 
+
 - ✅ Fixed 'unconfined' template violation
 - ✅ Now uses 'bluetooth' policy group  
 - ℹ️ Requires manual review (normal for Bluetooth apps)
@@ -96,6 +97,7 @@ Build version: 251219104845
 **Reason**: ADB connectivity issues in VM environment
 
 **Tests Required**:
+
 - [ ] Bluetooth adapter detection
 - [ ] Device discovery scanning
 - [ ] Device pairing
