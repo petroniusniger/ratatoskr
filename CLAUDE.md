@@ -6,7 +6,9 @@ container managed by 'clickable'
 - Language: GNU C++ 9.4.0
 - Libraries: 
   - Qt/QML 5.12.9
-- Build tool: `clickable build` in `ratatoskr/` subfolder
+- Build tool: 
+  - for host arch. (emulator): `clickable build` in `ratatoskr/` subfolder
+  - for target arch. (aarch64): `clickable build --arch arm64` in `ratatoskr/` subfolder
 - Emulator: clickable-ut 8.6.0 + docker 28.5.1
 
 # Project Structure
