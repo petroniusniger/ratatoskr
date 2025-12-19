@@ -70,16 +70,26 @@ This sprint implemented the core Bluetooth service layer for the Ratatoskr appli
 - `ratatoskr/Main.qml` - Updated UI with device discovery page
 - `ratatoskr/main.cpp` - Registered new services and types
 - `ratatoskr/CMakeLists.txt` - Added new source files
+- `ratatoskr/ratatoskr.apparmor` - Fixed AppArmor policy (removed unconfined)
+- `ratatoskr/shareplugin/shareplugin.apparmor` - Fixed AppArmor policy (removed unconfined)
 
 ### Deprecated Component Fixes
 - Replaced `UbuntuShape` with `Image` and `Rectangle`
 - Fixed rendering issue in emulator
 
+### AppArmor Security Policy
+- Removed `unconfined` template (not allowed for production)
+- Added `bluetooth` policy group for BlueZ/OBEX access
+- Implements ADR-002 security decision
+- Status: Ready for manual review (standard for BT apps)
+
 ## Build Status
 
 ✅ **Build**: Successful  
 ✅ **Compilation**: No errors  
-⚠️ **AppArmor Review**: Expected failures (unconfined policy for development)
+✅ **AppArmor Policy**: Fixed - using 'bluetooth' policy group (requires manual review)
+
+**AppArmor Status**: Changed from automatic rejection (`unconfined` not allowed) to manual review (`bluetooth` is reserved for vetted apps). This is **expected and correct** for Bluetooth applications.
 
 Build command: `clickable build`
 
@@ -154,8 +164,8 @@ transfer.cancel(): void
 
 ## Known Issues
 
-1. **AppArmor Confinement**: Application uses 'unconfined' policy which will need to be addressed for store submission
-2. **Hardware Testing Pending**: Unable to test Bluetooth functionality without real hardware
+1. **AppArmor Manual Review**: Application uses reserved 'bluetooth' policy group which requires manual vetting for OpenStore publication (this is normal and expected for Bluetooth apps)
+2. **Hardware Testing Pending**: Unable to test Bluetooth on real device from VM
 3. **Emulator Limitations**: D-Bus services may not be available in desktop emulator
 
 ## Next Steps
@@ -172,6 +182,7 @@ transfer.cancel(): void
 - `f693786` - T2.2: Implement Device Discovery Service
 - `f33903b` - T2.3: Implement OBEX Transfer Service
 - `b7e292b` - T2.5: Implement Main Page UI with device list
+- `c40075c` - Fix AppArmor policy: Replace 'unconfined' with 'bluetooth' policy group
 
 ## References
 
