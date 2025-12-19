@@ -9,7 +9,7 @@
  *           Based on ubtd by Michael Zanetti and Ian L.
  * Modification History:
  * - 2025-12-18 (0.0.1) : Initial adaptation from ubtd-20.04.
- * - 2025-12-19 (0.0.1) : Added BluetoothManager registration.
+ * - 2025-12-19 (0.0.1) : Added BluetoothManager and DeviceDiscovery.
  *========================================================*/
 
 #include <QGuiApplication>
@@ -20,6 +20,7 @@
 #include "adapter.h"
 #include "obexd.h"
 #include "bluetoothmanager.h"
+#include "devicediscovery.h"
 
 int main(int argc, char *argv[])
 {
@@ -29,12 +30,15 @@ int main(int argc, char *argv[])
     Adapter adapter;
     Obexd obexd;
     BluetoothManager bluetoothManager;
+    DeviceDiscovery deviceDiscovery;
 
     QQuickView view;
 
     view.rootContext()->setContextProperty("obexd", &obexd);
     view.rootContext()->setContextProperty("bluetoothManager", &bluetoothManager);
+    view.rootContext()->setContextProperty("deviceDiscovery", &deviceDiscovery);
     qmlRegisterUncreatableType<Transfer>("Ratatoskr", 1, 0, "Transfer", "get them from obexd");
+    qmlRegisterUncreatableType<BluetoothDevice>("Ratatoskr", 1, 0, "BluetoothDevice", "get them from deviceDiscovery");
 
     bluetoothManager.initialize();
 
