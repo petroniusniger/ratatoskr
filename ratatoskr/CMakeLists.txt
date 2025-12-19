@@ -78,6 +78,7 @@ set(MAIN_APP_SOURCES
     transfer.cpp
     bluetoothmanager.cpp
     devicediscovery.cpp
+    obextransfer.cpp
 )
 
 set(MAIN_APP_HEADERS
@@ -88,6 +89,7 @@ set(MAIN_APP_HEADERS
     transfer.h
     bluetoothmanager.h
     devicediscovery.h
+    obextransfer.h
 )
 
 # Main application resources
