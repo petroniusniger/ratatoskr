@@ -20,8 +20,14 @@ MainView {
     Page {
         id: mainPage
         header: PageHeader {
-            title: i18n.tr("Bluetooth file transfer....")
-            leadingActionBar.actions: []
+            title: i18n.tr("Bluetooth File Transfer")
+            trailingActionBar.actions: [
+                Action {
+                    iconName: "bluetooth-active"
+                    text: i18n.tr("Send File")
+                    onTriggered: pageStack.push(sendFilePage)
+                }
+            ]
         }
 
         ColumnLayout {
@@ -42,14 +48,14 @@ MainView {
 
                     Label {
                         id: label
-                        text: i18n.tr("Your Ubuntu Touch device is now ready to receive files via Bluetooth...")
+                        text: i18n.tr("Received Files")
                         fontSize: "large"
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                     }
                     Label {
-                        text: i18n.tr("Send a file via Bluetooth to your Ubuntu Touch phone. It will appear in the list below.")
-                        fontSize: "x-small"
+                        text: i18n.tr("Files sent to your Ubuntu Touch device via Bluetooth will appear below.")
+                        fontSize: "small"
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                     }
@@ -236,6 +242,106 @@ MainView {
                      }
                  }
                  onCancelPressed: pageStack.pop();
+            }
+        }
+    }
+
+    Component {
+        id: sendFilePage
+
+        Page {
+            id: sendPage
+            header: PageHeader {
+                title: i18n.tr("Send File")
+                trailingActionBar.actions: [
+                    Action {
+                        iconName: deviceDiscovery.discovering ? "media-playback-stop" : "search"
+                        text: deviceDiscovery.discovering ? i18n.tr("Stop Scan") : i18n.tr("Scan")
+                        onTriggered: {
+                            if (deviceDiscovery.discovering) {
+                                deviceDiscovery.stopDiscovery()
+                            } else {
+                                deviceDiscovery.startDiscovery()
+                            }
+                        }
+                    }
+                ]
+            }
+
+            ColumnLayout {
+                anchors {
+                    fill: parent
+                    topMargin: sendPage.header.height + units.gu(2)
+                    leftMargin: units.gu(2)
+                    rightMargin: units.gu(2)
+                }
+                spacing: units.gu(2)
+
+                Label {
+                    text: i18n.tr("Nearby Devices")
+                    fontSize: "large"
+                    Layout.fillWidth: true
+                }
+
+                Label {
+                    text: deviceDiscovery.discovering ? i18n.tr("Scanning for devices...") : i18n.tr("Tap scan to find nearby Bluetooth devices")
+                    fontSize: "small"
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    visible: deviceDiscovery.count === 0
+                }
+
+                ListView {
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    clip: true
+                    model: deviceDiscovery
+
+                    delegate: ListItem {
+                        height: units.gu(8)
+                        divider.visible: false
+
+                        onClicked: {
+                            console.log("Selected device:", alias)
+                        }
+
+                        ListItemLayout {
+                            title.text: alias || deviceName || address
+                            subtitle.text: address
+                            
+                            Icon {
+                                name: {
+                                    if (connected) return "bluetooth-active"
+                                    if (paired) return "bluetooth-active"
+                                    return "bluetooth"
+                                }
+                                width: units.gu(4)
+                                height: units.gu(4)
+                                SlotsLayout.position: SlotsLayout.Leading
+                            }
+
+                            Row {
+                                spacing: units.gu(1)
+                                SlotsLayout.position: SlotsLayout.Trailing
+
+                                Label {
+                                    text: i18n.tr("Paired")
+                                    fontSize: "small"
+                                    visible: paired
+                                    anchors.verticalCenter: parent.verticalCenter
+                                }
+
+                                Icon {
+                                    name: connected ? "network-cellular-connected" : ""
+                                    width: units.gu(2)
+                                    height: units.gu(2)
+                                    visible: connected
+                                    anchors.verticalCenter: parent.verticalCenter
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
