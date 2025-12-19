@@ -96,14 +96,12 @@ MainView {
                             Layout.fillHeight: true
                             Layout.preferredWidth: height
 
-                            UbuntuShape {
+                            Image {
+                                id: transferredImage
                                 anchors.fill: parent
-                                aspect: UbuntuShape.DropShadow
-                                sourceFillMode: Image.PreserveAspectCrop
-                                source: Image {
-                                    id: transferredImage
-                                    source: model.status === Transfer.StatusComplete ? "file://" + filePath + "/" + filename : ""
-                                }
+                                fillMode: Image.PreserveAspectCrop
+                                source: model.status === Transfer.StatusComplete ? "file://" + filePath + "/" + filename : ""
+                                visible: status === Image.Ready
                             }
 
                             Icon {
@@ -162,11 +160,12 @@ MainView {
                                 Layout.fillWidth: true
                                 text: filename
                             }
-                            UbuntuShape {
+                            Rectangle {
                                 Layout.fillWidth: true
                                 Layout.preferredHeight: units.dp(5)
                                 visible: status == Transfer.StatusActive
-                                UbuntuShape {
+                                color: theme.palette.normal.base
+                                Rectangle {
                                     anchors.fill: parent
                                     color: UbuntuColors.blue
                                     // trans : total = x : width
