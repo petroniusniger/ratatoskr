@@ -1,5 +1,5 @@
 # Sprint #002: test result
-(pan, 22/12/2025)
+(pan, 25/12/2025)
 
 ## Compilation / auto-review on host arch.
 
@@ -36,9 +36,8 @@
   - selected "OpenStore"
   - accepted disclaimer about risks
   - package installation proceeded and was reported successful
+  - 'Ratatoskr' app listed on OpenStore's "Installed Apps" page
   - 'Ratatoskr' icon showed up on phone's desktop
-- Note: during installation, no prompt was offered to confirm special rights
-  for application (e.g. access to bluetooth), which may be part of the problem
 
 ## Start application on phone
 
@@ -69,7 +68,7 @@ symptom of a lacking BT "file transfer" profile that should be provided by
 - Tap "share" icon in top-right corner
 - 'ratatoskr.philipa_shareplu' appears in the list of available apps as expected
 - 'ratatoskr.philipa_shareplu' has a blank icon, although it was expected to 
-  the one defined for the main app [screenshot](./screenshot20251221_183833900.jpg)
+  use the one defined for the main app [screenshot](./screenshot20251221_183833900.jpg)
 - tapping on blank 'ratatoskr' icon produces the following behaviour:
   - a pop-up dialog with progress animation shows up for a fraction of a second
     (too fast to read what it says)
@@ -80,5 +79,5 @@ symptom of a lacking BT "file transfer" profile that should be provided by
   - failure to load the SharePlugin icon (`QML QQuickImage: Failed to get 
     image from provider: image://content-hub/ratatoskr.philipa_shareplugin_251220171217`)
   - QML field deprecation (`qml: 'caller' is DEPRECATED. It has no effect.`)
-  - mismanagement of timers in the QObject destructor (`QObject::~QObject: 
-    Timers cannot be stopped from another thread`)
+  - mismanagement of timers in a threaded context by the QObject destructor 
+    (`QObject::~QObject: Timers cannot be stopped from another thread`)
