@@ -33,6 +33,16 @@ MainView {
         }
     }
 
+    Connections {
+        target: Qt.application
+        onAboutToQuit: {
+            console.log("SharePlugin: Cleaning up before quit")
+            scheduleRestart.stop()
+            btModel.running = false
+            btModel.continuousDiscovery = false
+        }
+    }
+
     Timer { id: scheduleRestart; interval: 1000; onTriggered: btModel.running = true; }
 
     BluetoothDiscoveryModel {
