@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Bluetooth
 Exec=shareplugin
-Icon=assets/logo.svg
+Icon=ratatoskr
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
