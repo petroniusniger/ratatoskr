@@ -1,3 +1,18 @@
+/*==========================================================
+ * Program : Main.qml              Project : ratatoskr
+ * Author  : Michael Zanetti, Ian L., Philippe Andersson
+ * Date    : 2026-01-21
+ * Version : 0.0.4
+ * Notice  : (c) Original work by Michael Zanetti, Canonical
+ *           Adapted by Ian L. and Philippe Andersson
+ * License : GNU GPL v3 or later
+ * Comment : ContentHub shareplugin QML interface
+ * Modification History:
+ * - 2025-12-18 (0.0.1) : Adapted from ubtd-20.04.
+ * - 2025-12-25 (0.0.3) : Switched to QQmlApplicationEngine.
+ * - 2026-01-21 (0.0.4) : Fixed applicationName to match manifest.
+ *========================================================*/
+
 import QtQuick 2.4
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.1
@@ -8,7 +23,7 @@ import Lomiri.Content 1.3
 
 MainView {
     id: root
-    applicationName: "ubtd-20.04.fourloop2002"
+    applicationName: "ratatoskr.philipa"
     anchorToKeyboard: true
 
     width: units.gu(100)
