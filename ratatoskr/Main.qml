@@ -79,15 +79,40 @@ MainView {
                 delegate: ListItem {
                     id: listItem
                     height: units.gu(10)
-                    onClicked: {
-                        pageStack.push(pickerPageComponent, {contentType: listItem.contentType, filePath: model.filePath + "/" + model.filename})
-                    }
 
                     leadingActions: ListItemActions {
                         actions: [
                             Action {
                                 iconName: "delete"
+                                text: i18n.tr("Delete")
                                 onTriggered: obexd.deleteFile(index)
+                            }
+                        ]
+                    }
+
+                    trailingActions: ListItemActions {
+                        actions: [
+                            Action {
+                                iconName: "share"
+                                text: i18n.tr("Share")
+                                onTriggered: {
+                                    pageStack.push(pickerPageComponent, {
+                                        contentType: listItem.contentType,
+                                        filePath: model.filePath + "/" + model.filename,
+                                        pickerHandler: ContentHandler.Share
+                                    })
+                                }
+                            },
+                            Action {
+                                iconName: "save"
+                                text: i18n.tr("Save")
+                                onTriggered: {
+                                    pageStack.push(pickerPageComponent, {
+                                        contentType: listItem.contentType,
+                                        filePath: model.filePath + "/" + model.filename,
+                                        pickerHandler: ContentHandler.Destination
+                                    })
+                                }
                             }
                         ]
                     }
@@ -214,6 +239,7 @@ MainView {
             id: pickerPage
             property alias contentType: picker.contentType
             property string filePath
+            property int pickerHandler: ContentHandler.Destination
 
             head {
                 visible: false
@@ -223,7 +249,7 @@ MainView {
             ContentPeerPicker {
                 id: picker
                 anchors.fill: parent
-                handler: ContentHandler.Destination
+                handler: pickerPage.pickerHandler
 
                 onPeerSelected: {
                      var transfer = peer.request();
