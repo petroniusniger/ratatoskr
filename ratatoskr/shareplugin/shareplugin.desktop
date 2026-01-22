@@ -6,5 +6,4 @@ Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
 X-Lomiri-Single-Instance=true
-NoDisplay=true
 

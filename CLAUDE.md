@@ -38,6 +38,7 @@ container managed by 'clickable'
 - [ADR-002: AppArmor Security Policy for Bluetooth Access](docs/ADR-002-apparmor-bluetooth-policy.md) - 2025-12-18
 - [ADR-003: OBEX D-Bus Service Discovery and Agent Registration](docs/ADR-003-obex-dbus-service-discovery.md) - 2026-01-15
 - [ADR-004: AppArmor D-Bus Receive Permissions for OBEX Agent](docs/ADR-004-apparmor-dbus-receive-permissions.md) - 2026-01-20
+- [ADR-005: SharePlugin NoDisplay Issue and ContentHub Integration](docs/ADR-005-shareplugin-nodisplay-issue.md) - 2026-01-22
 
 # Versioning Strategy
 
