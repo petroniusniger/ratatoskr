@@ -64,6 +64,8 @@ Test performed using the following package: `ratatoskr.philipa_260122124335_arm6
   Note:
   
     - the laptop's Bluetooth adaptor MAC address is `94:E6:F7:22:D6:56` (public)
+    - I also tried sharing a file of a different type (`.jpg`) and the behaviour
+      was the same
 
 - I eventually stopped the SharePlugin app manually:
 
