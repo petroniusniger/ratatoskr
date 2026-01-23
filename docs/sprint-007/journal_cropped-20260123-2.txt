@@ -1,0 +1,664 @@
+-- Logs begin at Sun 2026-01-04 09:25:44 CET, end at Fri 2026-01-23 13:47:57 CET. --
+[...]
+Jan 23 13:42:32 hatshepsut systemd[2136]: Started lomiri-app-launch--application-legacy--lomiri-system-settings--.service.
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.764] qtmir.sessions: Wakelock acquired "14"
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.793] qtmir.mir: SessionAuthorizer::connection_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.797] qtmir.mir: SessionAuthorizer::configure_input_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.797] qtmir.mir: SessionAuthorizer::set_base_input_configuration_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.797] qtmir.mir: SessionAuthorizer::configure_display_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.797] qtmir.mir: SessionAuthorizer::set_base_display_configuration_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.797] qtmir.mir: SessionAuthorizer::screencast_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.797] qtmir.mir: SessionAuthorizer::prompt_session_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4747
+Jan 23 13:42:32 hatshepsut lomiri[3136]: [2026-01-23:13:42:32.816] qtmir.sessions: TaskController::onSessionStarting - sessionName=lomiri-system-settings
+Jan 23 13:42:32 hatshepsut lomiri-system-settings[4747]: Creating a QMirClientScreen now
+Jan 23 13:42:32 hatshepsut lomiri-system-settings[4747]: BrightnessItem::BrightnessItem(const QVariantMap&, QObject*) ubuntu.widi.supported: 1
+Jan 23 13:42:33 hatshepsut dbus-daemon[1375]: [system] Activating service name='com.ubports.SystemImage' requested by ':1.129' (uid=32011 pid=4747 comm="lomiri-system-settings settings:///system/bluetoot" label="unconfined") (using servicehelper)
+Jan 23 13:42:34 hatshepsut dbus-daemon[1375]: [system] Successfully activated service 'com.ubports.SystemImage'
+Jan 23 13:42:34 hatshepsut dbus-daemon[1375]: [system] Activating service name='com.lomiri.applications.Downloader' requested by ':1.131' (uid=0 pid=4760 comm="/usr/bin/python3 /usr/sbin/system-image-dbus " label="unconfined") (using servicehelper)
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: Logging dir is "/var/log/lomiri-download-manager"
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: Logging dir is "/var/log/lomiri-download-manager"
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: Could not create log file: File exists
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: COULD NOT CREATE LOGFILE '20260123-134234.4762'!
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: Could not create log file: File exists
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: COULD NOT CREATE LOGFILE '20260123-134234.4762'!
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: E0123 13:42:34.316763  4762 downloads_db.cpp:146] Could not create the data path /var/cache/lomiri-download-manager
+Jan 23 13:42:34 hatshepsut com.lomiri.applications.Downloader[4762]: E0123 13:42:34.317874  4762 downloads_db.cpp:160]  unable to open database file Error opening database
+Jan 23 13:42:34 hatshepsut dbus-daemon[1375]: [system] Successfully activated service 'com.lomiri.applications.Downloader'
+Jan 23 13:42:34 hatshepsut dbus-daemon[2326]: [session uid=32011 pid=2326] Activating via systemd: service name='com.lomiri.applications.Downloader' unit='lomiri-download-manager-systemd.service' requested by ':1.123' (uid=32011 pid=4747 comm="lomiri-system-settings settings:///system/bluetoot" label="unconfined")
+Jan 23 13:42:34 hatshepsut systemd[2136]: Starting Lomiri Download Manager Service...
+Jan 23 13:42:34 hatshepsut lomiri-download-manager[4766]: Logging dir is "/home/phablet/.cache/lomiri-download-manager"
+Jan 23 13:42:34 hatshepsut lomiri-download-manager[4766]: Logging dir is "/home/phablet/.cache/lomiri-download-manager"
+Jan 23 13:42:34 hatshepsut dbus-daemon[2326]: [session uid=32011 pid=2326] Successfully activated service 'com.lomiri.applications.Downloader'
+Jan 23 13:42:34 hatshepsut systemd[2136]: Started Lomiri Download Manager Service.
+Jan 23 13:42:34 hatshepsut lomiri-system-settings[4747]: QProcess::start: Process is already running
+Jan 23 13:42:35 hatshepsut lomiri[3136]: [2026-01-23:13:42:35.245] Mir buffer is gl:TextureSource (old)
+Jan 23 13:42:35 hatshepsut lomiri-system-settings[4747]: bool UpdatePlugin::Click::ApiClientImpl::validReply(const QNetworkReply*) Could not parse status code.
+Jan 23 13:42:40 hatshepsut bluetoothd[1916]: src/service.c:btd_service_connect() a2dp-source profile connect failed for 94:E6:F7:22:D6:56: Device or resource busy
+Jan 23 13:42:40 hatshepsut lomiri[3136]: [2026-01-23:13:42:40.405] Input device added: "kermit (AVRCP)" "/dev/input/event6" QFlags<QInputDevice::InputType>(Button)
+Jan 23 13:42:40 hatshepsut ayatana-indicat[2698]: media_player_list_mpris_insert: assertion 'desktop_id != NULL' failed
+Jan 23 13:42:40 hatshepsut systemd-logind[1432]: Watching system buttons on /dev/input/event6 (kermit (AVRCP))
+Jan 23 13:42:43 hatshepsut bluetoothd[1916]: /org/bluez/hci0/dev_94_E6_F7_22_D6_56/sep4/fd2: fd(29) ready
+Jan 23 13:42:43 hatshepsut rtkit-daemon[2322]: Supervising 5 threads of 1 processes of 1 users.
+Jan 23 13:42:43 hatshepsut rtkit-daemon[2322]: Successfully made thread 4781 of process 2282 owned by '32011' RT at priority 5.
+Jan 23 13:42:43 hatshepsut rtkit-daemon[2322]: Supervising 6 threads of 1 processes of 1 users.
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]:   Output to wired headphone: false
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]:   Output to wired headset: false
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]: PulseAudio event for sink with index 4 received.
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]: PulseAudio event for sink with index 4 received.
+Jan 23 13:42:43 hatshepsut com.lomiri.TelephonyServiceHandler[2855]: Notified about card (bluez_card.94_E6_F7_22_D6_56) add event from PulseAudio
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]: media-hub: Connection state for port changed to: 2
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]: media-hub: AudioOutputObserver reports that output is now External.
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]: PulseAudio sink details for sink.primary_output with index 1 is available:
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]:   Output to wired headphone: false
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]:   Output to wired headset: false
+Jan 23 13:42:43 hatshepsut media-hub-server[2749]: PulseAudio sink details for sink.primary_output with index 1 is available:
+Jan 23 13:42:45 hatshepsut lomiri-system-settings[4747]: QObject: Cannot create children for a parent that is in a different thread.
+Jan 23 13:42:45 hatshepsut lomiri-system-settings[4747]: (Parent is QInputInfoManagerMir(0x797c0ac018), parent's thread is QThread(0x6300776fc0), current thread is QThread(0x6301028280)
+Jan 23 13:42:45 hatshepsut maliit-server[3280]: WARNING: QObject: Cannot create children for a parent that is in a different thread.
+Jan 23 13:42:45 hatshepsut maliit-server[3280]: (Parent is QInputInfoManagerMir(0x7de59f6018), parent's thread is QThread(0x63bb2d4210), current thread is QThread(0x63bbea6210)
+Jan 23 13:42:46 hatshepsut lomiri[3136]: [2026-01-23:13:42:46.135] file:///usr/share/lomiri//OrientedShell.qml:286:5: QML Shell: Binding loop detected for property "atDesktop"
+Jan 23 13:42:46 hatshepsut lomiri[3136]: [2026-01-23:13:42:46.135] file:///usr/share/lomiri//OrientedShell.qml:286:5: QML Shell: Binding loop detected for property "atDesktop"
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: qt.qpa.mirclient: Attempted to deliver an event to a non-existent window, ignoring.
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: qt.qpa.mirclient: Attempted to deliver an event to a non-existent window, ignoring.
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: file:///usr/share/lomiri-system-settings/qml-plugins/flight-mode/EntryComponent.qml: QML Item: Cannot anchor to an item that isn't a parent or sibling.
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: file:///usr/share/lomiri-system-settings/qml-plugins/orientation-lock/EntryComponent.qml: QML Item: Cannot anchor to an item that isn't a parent or sibling.
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: file:///usr/share/lomiri-system-settings/qml-plugins/update-notification/EntryComponent.qml: QML Item: Cannot anchor to an item that isn't a parent or sibling.
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: file:///usr/share/lomiri-system-settings/qml-plugins/about/EntryComponent.qml: QML Item: Cannot anchor to an item that isn't a parent or sibling.
+Jan 23 13:42:46 hatshepsut lomiri-system-settings[4747]: file:///usr/share/lomiri-system-settings/qml-plugins/reset/EntryComponent.qml: QML Item: Cannot anchor to an item that isn't a parent or sibling.
+Jan 23 13:42:46 hatshepsut lomiri[3136]: [2026-01-23:13:42:46.248] qtmir.sessions: TaskController::onSessionStopping - sessionName=lomiri-system-settings
+Jan 23 13:42:46 hatshepsut lomiri[3136]: [2026-01-23:13:42:46.248] qtmir.sessions: Wakelock released "14"
+Jan 23 13:42:46 hatshepsut repowerd[1426]: LogindSessionTracker: dbus_get_session_by_pid() failed: GDBus.Error:org.freedesktop.login1.NoSessionForPID: PID 3136 does not belong to any known session
+Jan 23 13:42:46 hatshepsut systemd[2136]: lomiri-app-launch--application-legacy--lomiri-system-settings--.service: Succeeded.
+Jan 23 13:42:46 hatshepsut lomiri[3136]: [2026-01-23:13:42:46.280] ApplicationManager::onProcessStopped reports stop of appId= "lomiri-system-settings" which AppMan is not managing, ignoring the event
+Jan 23 13:42:48 hatshepsut media-hub-server[2749]:   Output to wired headphone: false
+Jan 23 13:42:48 hatshepsut media-hub-server[2749]:   Output to wired headset: false
+Jan 23 13:42:48 hatshepsut media-hub-server[2749]: PulseAudio event for sink with index 4 received.
+Jan 23 13:42:48 hatshepsut media-hub-server[2749]: PulseAudio sink details for sink.primary_output with index 1 is available:
+Jan 23 13:42:48 hatshepsut com.lomiri.TelephonyServiceHandler[2855]: Notified about card (bluez_card.94_E6_F7_22_D6_56) changes event from PulseAudio
+Jan 23 13:42:56 hatshepsut repowerd[1426]: LogindSessionTracker: dbus_get_session_by_pid() failed: GDBus.Error:org.freedesktop.login1.NoSessionForPID: PID 3136 does not belong to any known session
+Jan 23 13:42:56 hatshepsut systemd[2136]: Started lomiri-app-launch--application-click--filemanager.ubports_filemanager_1.1.4--.service.
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.155] qtmir.sessions: Wakelock acquired "15"
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.407] qtmir.mir: SessionAuthorizer::connection_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.mir: SessionAuthorizer::configure_input_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.mir: SessionAuthorizer::set_base_input_configuration_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.mir: SessionAuthorizer::configure_display_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.mir: SessionAuthorizer::set_base_display_configuration_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.mir: SessionAuthorizer::screencast_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.mir: SessionAuthorizer::prompt_session_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4790
+Jan 23 13:42:56 hatshepsut lomiri[3136]: [2026-01-23:13:42:56.414] qtmir.sessions: TaskController::onSessionStarting - sessionName=lomiri-filemanager-app
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Creating a QMirClientScreen now
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Trying to load QML from: "/opt/click.ubuntu.com/filemanager.ubports/1.1.4/lib/aarch64-linux-gnu/bin/qml/filemanager.qml"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Trying to load QML from: "/opt/click.ubuntu.com/filemanager.ubports/1.1.4/qml/filemanager.qml"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: using main qml file from: "/opt/click.ubuntu.com/filemanager.ubports/1.1.4/qml/filemanager.qml"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: bool PamAuthentication::requireAuthentication() Querying if authentication required
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: bool PamAuthentication::requireAuthentication() Return value true
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::initNewUserMountsWatcher() Start watching mtab file for new mounts, using: ("/etc/mtab") and ()
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() rescanning mtab "/etc/mtab"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/root" dir: "/" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "devtmpfs" dir: "/dev" type: "devtmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/run" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "devpts" dir: "/dev/pts" type: "devpts"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "none" dir: "/sys" type: "sysfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: bool PlacesModel::isMtabEntryUserMount(const QMtabEntry&) const Ignoring mounts with filesystem name 'none'
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "none" dir: "/proc" type: "proc"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: bool PlacesModel::isMtabEntryUserMount(const QMtabEntry&) const Ignoring mounts with filesystem name 'none'
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/userdata" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/etc/fstab" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/NetworkManager/system-connections" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/default/ufw" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/ufw" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/ssh" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/writable" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/udev/rules.d" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/modules-load.d" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/systemd/system" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/binfmt.d" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/etc/machine-id" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "securityfs" dir: "/sys/kernel/security" type: "securityfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/dev/shm" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/run/lock" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/sys/fs/cgroup" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup2" dir: "/sys/fs/cgroup/unified" type: "cgroup2"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/systemd" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "pstore" dir: "/sys/fs/pstore" type: "pstore"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "bpf" dir: "/sys/fs/bpf" type: "bpf"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/memory" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/freezer" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/perf_event" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/blkio" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/cpu,cpuacct" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/schedtune" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/cpuset" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/net_cls" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "cgroup" dir: "/sys/fs/cgroup/devices" type: "cgroup"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "systemd-1" dir: "/proc/sys/fs/binfmt_misc" type: "autofs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "debugfs" dir: "/sys/kernel/debug" type: "debugfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "mqueue" dir: "/dev/mqueue" type: "mqueue"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tracefs" dir: "/sys/kernel/tracing" type: "tracefs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/android" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "fusectl" dir: "/sys/fs/fuse/connections" type: "fusectl"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "configfs" dir: "/sys/kernel/config" type: "configfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/home" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/media" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/nix" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/opt/click.ubuntu.com" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/root" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/tmp" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/cache/apparmor" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/AccountsService" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/NetworkManager" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/PackageKit" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/aethercast" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/android-data" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/apparmor" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/bluetooth" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/extrausers" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/lightdm" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/lightdm-data" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/lomiri-location-service" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/misc" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/nfcd" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/ofono" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/var/lib/openvpn/chroot/tmp" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/var/lib/sudo" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/system-image" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/systemd" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/upower" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/urfkill" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/usb-moded" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/usermetrics" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/waydroid" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/log" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/tmp" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "android_mnt" dir: "/android/mnt" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "android_mnt" dir: "/mnt" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p48" dir: "/android/mnt/vendor/persist" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p48" dir: "/mnt/vendor/persist" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p70" dir: "/android/vendor" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p66" dir: "/android/metadata" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p21" dir: "/android/vendor/firmware_mnt" type: "vfat"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/android/data" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/android/data/cache" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/android-data/cache" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/userdata/android-data/cache" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/var/lib/lxc/android/rootfs" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "android_mnt" dir: "/var/lib/lxc/android/rootfs/mnt" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p48" dir: "/var/lib/lxc/android/rootfs/mnt/vendor/persist" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p70" dir: "/var/lib/lxc/android/rootfs/vendor" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p21" dir: "/var/lib/lxc/android/rootfs/vendor/firmware_mnt" type: "vfat"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p66" dir: "/var/lib/lxc/android/rootfs/metadata" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/lxc/android/rootfs/data" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/mmcblk0p72" dir: "/var/lib/lxc/android/rootfs/data/cache" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/android/vendor/odm/etc/vintf/manifest_G020D.xml" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/var/lib/lxc/android/rootfs/vendor/odm/etc/vintf/manifest_G020D.xml" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/android/vendor/odm/etc/vintf/manifest_G020H.xml" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/var/lib/lxc/android/rootfs/vendor/odm/etc/vintf/manifest_G020H.xml" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/android/vendor/ueventd.rc" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/var/lib/lxc/android/rootfs/vendor/ueventd.rc" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/etc/default/lsc-wrapper.d/50-default.conf" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/etc/default/usb-moded.d/device-specific-config.conf" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/etc/deviceinfo/devices/halium.yaml" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "halium-overlay-ofono" dir: "/etc/ofono" type: "overlay"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/etc/ubuntu-touch-session.d/android.conf" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/usr/lib/udev/rules.d/70-android.rules" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/usr/libexec/lxc-android-config/device-hacks" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "/dev/loop0" dir: "/usr/share/repowerd/device-configs/config-default.xml" type: "ext4"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tracefs" dir: "/sys/kernel/debug/tracing" type: "tracefs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "workaround-session-migration-mtime" dir: "/usr/share/session-migration/scripts" type: "overlay"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void PlacesModel::rescanMtab() Considering fsName: "tmpfs" dir: "/run/user/32011" type: "tmpfs"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/home/phablet"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/home/phablet/Documents"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/home/phablet/Downloads"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/home/phablet/Music"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/home/phablet/Pictures"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/home/phablet/Videos"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "smb://"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: Location:  "/"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, QML is not ready yet
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: ""
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: ""
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet"
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: ""
+Jan 23 13:42:56 hatshepsut aa-exec[4790]: qml: [SidebarPageLayout] Sidebar loaded
+Jan 23 13:42:57 hatshepsut lomiri[3136]: [2026-01-23:13:42:57.232] Mir buffer is gl:TextureSource (old)
+Jan 23 13:42:59 hatshepsut aa-exec[4790]: qml: browsable path= /home/phablet/Pictures isRemote= false needsAuthentication= false
+Jan 23 13:42:59 hatshepsut aa-exec[4790]: qml: Changing to dir /home/phablet/Pictures
+Jan 23 13:42:59 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet/Pictures"
+Jan 23 13:42:59 hatshepsut aa-exec[4790]: ""
+Jan 23 13:42:59 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet/Pictures"
+Jan 23 13:43:01 hatshepsut aa-exec[4790]: qml: browsable path= /home/phablet/Pictures/Others isRemote= false needsAuthentication= false
+Jan 23 13:43:01 hatshepsut aa-exec[4790]: qml: Changing to dir /home/phablet/Pictures/Others
+Jan 23 13:43:01 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet/Pictures/Others"
+Jan 23 13:43:01 hatshepsut aa-exec[4790]: ""
+Jan 23 13:43:01 hatshepsut aa-exec[4790]: void DirModel::setPath(const QString&, const QString&, const QString&, bool, bool) DirModel_QML_87(0x5b1be82f50) Ignoring path change request, request already running in "/home/phablet/Pictures/Others"
+Jan 23 13:43:01 hatshepsut com.lomiri.Thumbnailer[4579]: thumbnailer-service: [13:43:01.341] "thumbnail: FD 26 (125,125): 0.013369 sec (MISS)"
+Jan 23 13:43:05 hatshepsut systemd[2136]: lomiri-download-manager-systemd.service: Succeeded.
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: qml: openFromDisk():/home/phablet/Pictures/Others/IMG_1370.jpg
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: qml: FileOpener_QMLTYPE_196(0x5b1c30feb0)"Open with": In Lomiri.Components 1.3, the use of Page.title, Page.flickable and Page.head is deprecated. Use Page.header and the PageHeader component instead.
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: qml: resolveContentType for file file:///home/phablet/Pictures/Others/IMG_1370.jpg
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: qml: file extension: jpg
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: qml: returning contentType: 2
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: qml: Resolved contenttype: 2
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: file:///opt/click.ubuntu.com/filemanager.ubports/1.1.4/qml/content-hub/FileOpener.qml:72:9: Unable to assign [undefined] to QObject*
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: file:///usr/lib/aarch64-linux-gnu/qt5/qml/Lomiri/Content/ContentPeerPicker13.qml:128:29: QML QQuickImage: Failed to get image from provider: image://content-hub/dekko2.dekkoproject_dekko_0.5.1-20.04
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: file:///usr/lib/aarch64-linux-gnu/qt5/qml/Lomiri/Content/ContentPeerPicker13.qml:128:29: QML QQuickImage: Failed to get image from provider: image://content-hub/dekko2.dekkoproject_dekko_0.5.1-20.04
+Jan 23 13:43:06 hatshepsut aa-exec[4790]: file:///usr/lib/aarch64-linux-gnu/qt5/qml/Lomiri/Content/ContentPeerPicker13.qml:128:29: QML QQuickImage: Failed to get image from provider: image://content-hub/ratatoskr.philipa_shareplugin_260123123714
+Jan 23 13:43:08 hatshepsut aa-exec[4790]: qml: curTransfer StateChanged: 3
+Jan 23 13:43:08 hatshepsut systemd[2136]: Started lomiri-app-launch--application-click--ratatoskr.philipa_shareplugin_260123123714--.service.
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.427] file:///usr/share/lomiri//Stage/WindowInfoItem.qml:44:17: QML QQuickImage: Error decoding: file:///opt/click.ubuntu.com/.click/users/@all/ratatoskr.philipa/ratatoskr: Unsupported image format
+Jan 23 13:43:08 hatshepsut aa-exec[4790]: qml: curTransfer StateChanged: 3
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.449] file:///usr/share/lomiri//Stage/Splash.qml:113:17: QML QQuickImage: Error decoding: file:///opt/click.ubuntu.com/.click/users/@all/ratatoskr.philipa/ratatoskr: Unsupported image format
+Jan 23 13:43:08 hatshepsut aa-exec[4790]: QObject::startTimer: Timers cannot be started from another thread
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.465] file:///usr/share/lomiri//Launcher/LauncherDelegate.qml:140:21: QML QQuickImage: Error decoding: file:///opt/click.ubuntu.com/.click/users/@all/ratatoskr.philipa/ratatoskr: Unsupported image format
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.493] qtmir.mir: SessionAuthorizer::connection_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.500] qtmir.mir: SessionAuthorizer::configure_input_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.500] qtmir.mir: SessionAuthorizer::set_base_input_configuration_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.500] qtmir.mir: SessionAuthorizer::configure_display_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.500] qtmir.mir: SessionAuthorizer::set_base_display_configuration_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.500] qtmir.mir: SessionAuthorizer::screencast_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.500] qtmir.mir: SessionAuthorizer::prompt_session_is_allowed - this= qtmir::SessionAuthorizer(0x6fb41a75f0) pid= 4802
+Jan 23 13:43:08 hatshepsut lomiri[3136]: [2026-01-23:13:43:08.501] qtmir.sessions: TaskController::onSessionStarting - sessionName=shareplugin
+Jan 23 13:43:08 hatshepsut aa-exec[4802]: Creating a QMirClientScreen now
+Jan 23 13:43:08 hatshepsut aa-exec[4802]: qt.bluetooth.bluez: Missing CAP_NET_ADMIN permission. Cannot determine whether a found address is of random or public type.
+Jan 23 13:43:08 hatshepsut aa-exec[4802]: qml: New device: 00:01:95:4B:A3:51
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 44:E4:EE:98:1B:6D
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 94:E6:F7:22:D6:56
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: ContentHub share requested, transfer: ContentTransfer(0x5ea7230450)
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: Should share file /home/phablet/.cache/ratatoskr.philipa/HubIncoming/4/IMG_1370.jpg
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 47:02:C6:F3:8E:BF
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 7A:3D:11:F5:90:48
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 38:C1:2F:48:46:22
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: B8:55:48:BD:1A:0D
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 02:A9:AC:46:6E:FE
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 74:46:B3:8D:9F:EB
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:7B:7B
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 7F:47:2E:90:22:93
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 5E:9C:2F:E2:60:03
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 22:8F:74:33:6F:33
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 73:87:11:78:8E:19
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 16:A9:2C:92:AB:F8
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 6A:14:CE:2F:53:E3
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 78:BD:BC:D3:F9:39
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 0A:14:CC:E1:A5:A2
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 74:92:7C:E4:EC:2E
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 64:7E:EB:D9:66:7A
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 04:81:83:59:E8:58
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 68:72:E7:8E:6A:B6
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:74:08
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 0C:FD:27:F2:BC:99
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 2B:1E:E0:D0:A1:E1
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 5B:5E:A5:73:96:12
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 4E:32:A4:E5:50:23
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 2C:87:9F:9A:19:E2
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 7E:8F:D5:11:42:73
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 08:85:E4:C6:A6:A5
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 49:24:A8:AB:20:6F
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: CC:B1:1A:2D:DD:1B
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 2A:32:A1:24:04:74
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 43:36:EC:9C:5D:CA
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 54:A1:8C:FA:68:61
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 1E:09:C8:47:DD:42
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 04:A0:71:F0:0C:2A
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 6A:56:4B:CC:E7:11
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:C2:A5
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 21:28:B1:69:80:6B
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 58:CF:8D:33:05:BD
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 1E:2D:17:51:18:FF
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 06:D9:93:A2:D4:D8
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 1A:E1:AA:56:4F:96
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 41:CC:E2:4B:9B:5A
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:A9:98
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 2C:8E:9E:76:37:20
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 12:93:AC:53:F2:CE
+Jan 23 13:43:09 hatshepsut aa-exec[4802]: qml: New device: 19:1D:89:EE:5E:EE
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 30:EF:51:DA:AE:7A
+Jan 23 13:43:10 hatshepsut zeitgeist-fts[3848]: Unable to get info on application://lomiri-app-launch.desktop
+Jan 23 13:43:10 hatshepsut zeitgeist-fts[3848]: Unable to get info on application://filemanager.ubports_filemanager.desktop
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: CA:FE:DC:CF:8F:28
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 6A:92:4B:57:38:CD
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 69:E6:71:58:9E:F8
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: FE:12:F9:19:30:93
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: FC:F1:36:65:53:95
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 20:BF:F5:BA:F9:AA
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 28:D4:91:6E:63:DE
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 72:63:D0:05:54:00
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: F8:FB:90:67:AA:70
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: DD:D2:DB:07:49:FE
+Jan 23 13:43:10 hatshepsut aa-exec[4802]: qml: New device: 38:7A:33:FD:46:8C
+Jan 23 13:43:11 hatshepsut aa-exec[4802]: qml: New device: 0A:2A:33:23:28:12
+Jan 23 13:43:11 hatshepsut aa-exec[4802]: qml: New device: 7D:0B:63:A8:84:C2
+Jan 23 13:43:12 hatshepsut aa-exec[4802]: qml: New device: 6A:53:72:C3:4E:78
+Jan 23 13:43:12 hatshepsut aa-exec[4802]: qml: New device: 72:84:66:81:D1:5A
+Jan 23 13:43:13 hatshepsut aa-exec[4802]: qml: New device: 0E:8E:63:B0:11:E2
+Jan 23 13:43:15 hatshepsut aa-exec[4802]: qml: New device: 51:4E:6E:59:A3:4E
+Jan 23 13:43:15 hatshepsut aa-exec[4802]: qml: New device: 23:97:16:DE:85:EE
+Jan 23 13:43:15 hatshepsut aa-exec[4802]: qml: New device: D4:EC:DD:A8:82:97
+Jan 23 13:43:17 hatshepsut aa-exec[4802]: qml: New device: 38:7B:01:F7:B0:22
+Jan 23 13:43:18 hatshepsut aa-exec[4802]: qml: New device: E0:05:79:6B:DF:3A
+Jan 23 13:43:19 hatshepsut aa-exec[4802]: qml: New device: 79:76:8F:DC:1B:B5
+Jan 23 13:43:20 hatshepsut aa-exec[4802]: qml: New device: 5C:99:5B:CC:62:88
+Jan 23 13:43:21 hatshepsut aa-exec[4802]: qml: New device: 6E:FB:32:33:6C:80
+Jan 23 13:43:23 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:D0
+Jan 23 13:43:24 hatshepsut aa-exec[4802]: qml: New device: CF:8F:FE:F9:96:50
+Jan 23 13:43:26 hatshepsut aa-exec[4802]: qml: New device: 56:B0:B1:39:63:CB
+Jan 23 13:43:27 hatshepsut aa-exec[4802]: qml: New device: 19:E6:DB:17:B5:C8
+Jan 23 13:43:27 hatshepsut aa-exec[4802]: qml: New device: DD:FA:A5:F9:6F:4B
+Jan 23 13:43:29 hatshepsut aa-exec[4802]: qml: New device: 49:9C:57:AE:9D:E6
+Jan 23 13:43:31 hatshepsut com.lomiri.Thumbnailer[4579]: thumbnailer-service: [13:43:31.059] Idle timeout reached.
+Jan 23 13:43:31 hatshepsut com.lomiri.Thumbnailer[4579]: thumbnailer-service: [13:43:31.061] Exiting
+Jan 23 13:43:34 hatshepsut aa-exec[4802]: qml: New device: D1:FF:E8:27:22:3C
+Jan 23 13:43:36 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:BA
+Jan 23 13:43:37 hatshepsut aa-exec[4802]: qml: New device: 3F:E8:17:8D:D7:F7
+Jan 23 13:43:40 hatshepsut aa-exec[4802]: qml: New device: 0A:B2:35:D4:A1:26
+Jan 23 13:43:40 hatshepsut aa-exec[4802]: qml: New device: CD:3B:12:44:3A:B8
+Jan 23 13:43:40 hatshepsut aa-exec[4802]: qml: New device: F8:04:2E:E4:03:11
+Jan 23 13:43:42 hatshepsut aa-exec[4802]: qml: New device: 23:14:9B:40:DC:77
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 00:01:95:4B:A3:51
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:BA
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:D0
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 23:14:9B:40:DC:77
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 43:36:EC:9C:5D:CA
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 44:E4:EE:98:1B:6D
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 49:24:A8:AB:20:6F
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 51:4E:6E:59:A3:4E
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 56:B0:B1:39:63:CB
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 58:CF:8D:33:05:BD
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 5B:5E:A5:73:96:12
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 68:72:E7:8E:6A:B6
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 69:E6:71:58:9E:F8
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 6A:92:4B:57:38:CD
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 72:84:66:81:D1:5A
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 74:92:7C:E4:EC:2E
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 79:76:8F:DC:1B:B5
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 7D:0B:63:A8:84:C2
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 7E:8F:D5:11:42:73
+Jan 23 13:43:45 hatshepsut aa-exec[4802]: qml: New device: 94:E6:F7:22:D6:56
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: B8:55:48:BD:1A:0D
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: F8:FB:90:67:AA:70
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 04:81:83:59:E8:58
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 16:A9:2C:92:AB:F8
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: F8:04:2E:E4:03:11
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 21:28:B1:69:80:6B
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 2B:1E:E0:D0:A1:E1
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 0C:FD:27:F2:BC:99
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 02:A9:AC:46:6E:FE
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 6A:56:4B:CC:E7:11
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 1E:09:C8:47:DD:42
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 23:97:16:DE:85:EE
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 04:A0:71:F0:0C:2A
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 47:02:C6:F3:8E:BF
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 74:46:B3:8D:9F:EB
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 38:C1:2F:48:46:22
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 5E:9C:2F:E2:60:03
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 19:E6:DB:17:B5:C8
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: CF:8F:FE:F9:96:50
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 41:CC:E2:4B:9B:5A
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 2A:32:A1:24:04:74
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 73:87:11:78:8E:19
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 06:D9:93:A2:D4:D8
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 08:85:E4:C6:A6:A5
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 64:7E:EB:D9:66:7A
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 7F:47:2E:90:22:93
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 54:A1:8C:FA:68:61
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 0A:14:CC:E1:A5:A2
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 78:BD:BC:D3:F9:39
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 22:8F:74:33:6F:33
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 1E:2D:17:51:18:FF
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: FC:F1:36:65:53:95
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 0E:8E:63:B0:11:E2
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:7B:7B
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 3F:E8:17:8D:D7:F7
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: 7A:3D:11:F5:90:48
+Jan 23 13:43:46 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:74:08
+Jan 23 13:43:47 hatshepsut aa-exec[4802]: qml: New device: CC:B1:1A:2D:DC:FE
+Jan 23 13:43:47 hatshepsut aa-exec[4802]: qml: New device: 0A:B2:35:D4:A1:26
+Jan 23 13:43:49 hatshepsut aa-exec[4802]: qml: New device: 6E:FB:32:33:6C:80
+Jan 23 13:43:50 hatshepsut lomiri[3136]: [2026-01-23:13:43:50.047] qml: updateLightState: onBatteryLevelChanged, indicatorState: INDICATOR_OFF, supportsMultiColorLed: true, hasMessages: false, icon: battery-full-symbolic, displayStatus: 1, deviceState: discharging, batteryLevel: 86
+Jan 23 13:43:50 hatshepsut aa-exec[4802]: qml: New device: 72:63:D0:05:54:00
+Jan 23 13:43:50 hatshepsut aa-exec[4802]: qml: New device: D1:FF:E8:27:22:3C
+Jan 23 13:43:50 hatshepsut aa-exec[4802]: qml: New device: 5C:99:5B:CC:62:88
+Jan 23 13:43:50 hatshepsut aa-exec[4802]: qml: New device: D4:EC:DD:A8:82:97
+Jan 23 13:43:50 hatshepsut aa-exec[4802]: qml: New device: FE:12:F9:19:30:93
+Jan 23 13:43:51 hatshepsut aa-exec[4802]: qml: New device: 6A:14:CE:2F:53:E3
+Jan 23 13:43:51 hatshepsut aa-exec[4802]: qml: New device: DD:D2:DB:07:49:FE
+Jan 23 13:43:52 hatshepsut aa-exec[4802]: qml: New device: 1A:E1:AA:56:4F:96
+Jan 23 13:43:59 hatshepsut aa-exec[4802]: qml: New device: 12:93:AC:53:F2:CE
+Jan 23 13:44:00 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:79:A0
+Jan 23 13:44:00 hatshepsut aa-exec[4802]: qml: New device: 38:7A:33:FD:46:8C
+Jan 23 13:44:01 hatshepsut aa-exec[4802]: qml: New device: CD:3B:12:44:3A:B8
+Jan 23 13:44:01 hatshepsut aa-exec[4802]: qml: New device: 49:9C:57:AE:9D:E6
+Jan 23 13:44:02 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:C2:A5
+Jan 23 13:44:02 hatshepsut aa-exec[4802]: qml: New device: 30:EF:51:DA:AE:7A
+Jan 23 13:44:04 hatshepsut aa-exec[4802]: qml: New device: E0:05:79:6B:DF:3A
+Jan 23 13:44:05 hatshepsut aa-exec[4802]: qml: New device: C1:02:01:A0:D6:A2
+Jan 23 13:44:05 hatshepsut aa-exec[4802]: qml: New device: CC:B1:1A:2D:DD:1B
+Jan 23 13:44:07 hatshepsut aa-exec[4802]: qml: New device: 04:52:C7:F1:98:F7
+Jan 23 13:44:08 hatshepsut aa-exec[4802]: qml: New device: DD:FA:A5:F9:6F:4B
+Jan 23 13:44:08 hatshepsut aa-exec[4802]: qml: New device: 00:01:95:4B:A3:51
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:BA
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:D0
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 04:52:C7:F1:98:F7
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 23:14:9B:40:DC:77
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:A9:98
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 43:36:EC:9C:5D:CA
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 44:E4:EE:98:1B:6D
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 49:24:A8:AB:20:6F
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 51:4E:6E:59:A3:4E
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 56:B0:B1:39:63:CB
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 58:CF:8D:33:05:BD
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 5B:5E:A5:73:96:12
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 68:72:E7:8E:6A:B6
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 69:E6:71:58:9E:F8
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 6A:92:4B:57:38:CD
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 72:84:66:81:D1:5A
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 74:92:7C:E4:EC:2E
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 79:76:8F:DC:1B:B5
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 7D:0B:63:A8:84:C2
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 7E:8F:D5:11:42:73
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 94:E6:F7:22:D6:56
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: B8:55:48:BD:1A:0D
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: F8:FB:90:67:AA:70
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 74:46:B3:8D:9F:EB
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 0A:14:CC:E1:A5:A2
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 0C:FD:27:F2:BC:99
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 16:A9:2C:92:AB:F8
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 5E:9C:2F:E2:60:03
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 2A:32:A1:24:04:74
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 06:D9:93:A2:D4:D8
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:74:08
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 23:97:16:DE:85:EE
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 19:E6:DB:17:B5:C8
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 64:7E:EB:D9:66:7A
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 47:02:C6:F3:8E:BF
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 6E:FB:32:33:6C:80
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 04:A0:71:F0:0C:2A
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 22:8F:74:33:6F:33
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 04:81:83:59:E8:58
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 78:BD:BC:D3:F9:39
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 7A:3D:11:F5:90:48
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 02:A9:AC:46:6E:FE
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 72:63:D0:05:54:00
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 54:A1:8C:FA:68:61
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 41:CC:E2:4B:9B:5A
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 73:87:11:78:8E:19
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 38:7A:33:FD:46:8C
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: FC:F1:36:65:53:95
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 7F:47:2E:90:22:93
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 30:EF:51:DA:AE:7A
+Jan 23 13:44:09 hatshepsut aa-exec[4802]: qml: New device: 12:93:AC:53:F2:CE
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 38:C1:2F:48:46:22
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 08:85:E4:C6:A6:A5
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 6A:56:4B:CC:E7:11
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 21:28:B1:69:80:6B
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 0A:B2:35:D4:A1:26
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 2B:1E:E0:D0:A1:E1
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: 1E:2D:17:51:18:FF
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:7B:7B
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: D1:FF:E8:27:22:3C
+Jan 23 13:44:10 hatshepsut aa-exec[4802]: qml: New device: FE:12:F9:19:30:93
+Jan 23 13:44:11 hatshepsut aa-exec[4802]: qml: New device: 3F:E8:17:8D:D7:F7
+Jan 23 13:44:11 hatshepsut aa-exec[4802]: qml: New device: 0E:8E:63:B0:11:E2
+Jan 23 13:44:12 hatshepsut aa-exec[4802]: qml: New device: E0:05:79:6B:DF:3A
+Jan 23 13:44:14 hatshepsut aa-exec[4802]: qml: New device: 5C:99:5B:CC:62:88
+Jan 23 13:44:15 hatshepsut aa-exec[4802]: qml: New device: D4:EC:DD:A8:82:97
+Jan 23 13:44:20 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:C2:A5
+Jan 23 13:44:20 hatshepsut aa-exec[4802]: qml: New device: 6A:14:CE:2F:53:E3
+Jan 23 13:44:20 hatshepsut aa-exec[4802]: qml: New device: 0D:B2:D8:42:02:AD
+Jan 23 13:44:21 hatshepsut aa-exec[4802]: qml: New device: 1A:E1:AA:56:4F:96
+Jan 23 13:44:21 hatshepsut aa-exec[4802]: qml: New device: DD:D2:DB:07:49:FE
+Jan 23 13:44:22 hatshepsut aa-exec[4802]: qml: New device: 08:38:CB:6B:69:DB
+Jan 23 13:44:23 hatshepsut aa-exec[4802]: qml: New device: CF:8F:FE:F9:96:50
+Jan 23 13:44:24 hatshepsut aa-exec[4802]: qml: New device: 00:B3:E0:19:01:F8
+Jan 23 13:44:25 hatshepsut aa-exec[4802]: qml: New device: 0A:2A:33:23:28:12
+Jan 23 13:44:25 hatshepsut aa-exec[4802]: qml: New device: 39:62:89:F4:8A:7F
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 00:01:95:4B:A3:51
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:BA
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:D0
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 04:52:C7:F1:98:F7
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:A9:98
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 43:36:EC:9C:5D:CA
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 44:E4:EE:98:1B:6D
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 49:24:A8:AB:20:6F
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 51:4E:6E:59:A3:4E
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 56:B0:B1:39:63:CB
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 5B:5E:A5:73:96:12
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 68:72:E7:8E:6A:B6
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 69:E6:71:58:9E:F8
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 6A:92:4B:57:38:CD
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 72:84:66:81:D1:5A
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 74:92:7C:E4:EC:2E
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 79:76:8F:DC:1B:B5
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 7D:0B:63:A8:84:C2
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 7E:8F:D5:11:42:73
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 94:E6:F7:22:D6:56
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: F8:FB:90:67:AA:70
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 04:81:83:59:E8:58
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 1A:E1:AA:56:4F:96
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:74:08
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 6A:56:4B:CC:E7:11
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: B8:55:48:BD:1A:0D
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 7F:47:2E:90:22:93
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 7A:3D:11:F5:90:48
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 2B:1E:E0:D0:A1:E1
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 64:7E:EB:D9:66:7A
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 02:A9:AC:46:6E:FE
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 08:85:E4:C6:A6:A5
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 0A:14:CC:E1:A5:A2
+Jan 23 13:44:29 hatshepsut aa-exec[4802]: qml: New device: 0C:FD:27:F2:BC:99
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 16:A9:2C:92:AB:F8
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 21:28:B1:69:80:6B
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 73:87:11:78:8E:19
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 2A:32:A1:24:04:74
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 06:D9:93:A2:D4:D8
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 6A:14:CE:2F:53:E3
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 47:02:C6:F3:8E:BF
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 30:EF:51:DA:AE:7A
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 37:A7:F7:C7:DB:B4
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 5E:9C:2F:E2:60:03
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:C2:A5
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:7B:7B
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 74:46:B3:8D:9F:EB
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 78:BD:BC:D3:F9:39
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: FC:F1:36:65:53:95
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 08:38:CB:6B:69:DB
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 22:8F:74:33:6F:33
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 12:93:AC:53:F2:CE
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 54:A1:8C:FA:68:61
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 38:C1:2F:48:46:22
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: D4:52:D0:6E:06:0A
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: FE:12:F9:19:30:93
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 3C:3E:C3:40:2A:BC
+Jan 23 13:44:30 hatshepsut aa-exec[4802]: qml: New device: 1E:2D:17:51:18:FF
+Jan 23 13:44:31 hatshepsut aa-exec[4802]: qml: New device: 6E:39:00:71:CD:DD
+Jan 23 13:44:31 hatshepsut aa-exec[4802]: qml: New device: 04:A0:71:F0:0C:2A
+Jan 23 13:44:31 hatshepsut aa-exec[4802]: qml: New device: 50:E4:00:1F:D3:9C
+Jan 23 13:44:31 hatshepsut aa-exec[4802]: qml: New device: CD:3B:12:44:3A:B8
+Jan 23 13:44:31 hatshepsut aa-exec[4802]: qml: New device: 69:F8:D8:6D:69:20
+Jan 23 13:44:32 hatshepsut aa-exec[4802]: qml: New device: DD:FA:A5:F9:6F:4B
+Jan 23 13:44:32 hatshepsut aa-exec[4802]: qml: New device: 39:62:89:F4:8A:7F
+Jan 23 13:44:32 hatshepsut aa-exec[4802]: qml: New device: 0D:B2:D8:42:02:AD
+Jan 23 13:44:32 hatshepsut aa-exec[4802]: qml: New device: 0E:8E:63:B0:11:E2
+Jan 23 13:44:33 hatshepsut aa-exec[4802]: qml: New device: CF:8F:FE:F9:96:50
+Jan 23 13:44:33 hatshepsut aa-exec[4802]: qml: New device: 5C:99:5B:CC:62:88
+Jan 23 13:44:34 hatshepsut aa-exec[4802]: qml: New device: D1:FF:E8:27:22:3C
+Jan 23 13:44:34 hatshepsut aa-exec[4802]: qml: New device: 41:CC:E2:4B:9B:5A
+Jan 23 13:44:34 hatshepsut aa-exec[4802]: qml: New device: D4:EC:DD:A8:82:97
+Jan 23 13:44:37 hatshepsut aa-exec[4802]: qml: New device: E0:05:79:6B:DF:3A
+Jan 23 13:44:38 hatshepsut aa-exec[4802]: qml: New device: CC:B1:1A:2D:DD:1B
+Jan 23 13:44:42 hatshepsut aa-exec[4802]: qml: New device: 28:D4:91:6E:63:DE
+Jan 23 13:44:46 hatshepsut aa-exec[4802]: qml: New device: 23:14:9B:40:DC:77
+Jan 23 13:44:46 hatshepsut aa-exec[4802]: qml: New device: 38:7A:33:FD:46:8C
+Jan 23 13:44:47 hatshepsut aa-exec[4802]: qml: New device: 19:1D:89:EE:5E:EE
+Jan 23 13:44:50 hatshepsut aa-exec[4802]: qml: New device: 3F:76:44:11:7D:16
+Jan 23 13:44:56 hatshepsut aa-exec[4802]: qml: New device: 49:82:16:E6:CD:89
+Jan 23 13:44:57 hatshepsut aa-exec[4802]: qml: New device: F8:04:2E:E4:03:11
+Jan 23 13:45:05 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:79:A0
+Jan 23 13:45:17 hatshepsut aa-exec[4802]: qml: New device: 00:B3:E0:19:01:F8
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 00:01:95:4B:A3:51
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:BA
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 00:41:0E:5F:C0:D0
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 04:52:C7:F1:98:F7
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 23:14:9B:40:DC:77
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 43:36:EC:9C:5D:CA
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 44:E4:EE:98:1B:6D
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 49:24:A8:AB:20:6F
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 50:E4:00:1F:D3:9C
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 51:4E:6E:59:A3:4E
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 56:B0:B1:39:63:CB
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 5B:5E:A5:73:96:12
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 68:72:E7:8E:6A:B6
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 69:E6:71:58:9E:F8
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 69:F8:D8:6D:69:20
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 6A:92:4B:57:38:CD
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 6E:39:00:71:CD:DD
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 72:84:66:81:D1:5A
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 74:46:B3:8D:9F:EB
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 74:92:7C:E4:EC:2E
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 79:76:8F:DC:1B:B5
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 7D:0B:63:A8:84:C2
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 7E:8F:D5:11:42:73
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 94:E6:F7:22:D6:56
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: B8:55:48:BD:1A:0D
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 16:A9:2C:92:AB:F8
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 0A:14:CC:E1:A5:A2
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 78:BD:BC:D3:F9:39
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 7F:47:2E:90:22:93
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 2A:32:A1:24:04:74
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: FC:F1:36:65:53:95
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 38:01:95:CA:C2:A5
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 08:85:E4:C6:A6:A5
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 2B:1E:E0:D0:A1:E1
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 6A:56:4B:CC:E7:11
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 08:38:CB:6B:69:DB
+Jan 23 13:45:20 hatshepsut aa-exec[4802]: qml: New device: 47:02:C6:F3:8E:BF
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 22:8F:74:33:6F:33
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 02:A9:AC:46:6E:FE
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 0E:8E:63:B0:11:E2
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 64:7E:EB:D9:66:7A
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 0C:FD:27:F2:BC:99
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 04:A0:71:F0:0C:2A
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 5E:9C:2F:E2:60:03
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 06:D9:93:A2:D4:D8
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 08:B9:6B:65:62:44
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: 04:81:83:59:E8:58
+Jan 23 13:45:21 hatshepsut aa-exec[4802]: qml: New device: D8:E0:E1:87:7B:7B
+Jan 23 13:45:21 hatshepsut systemd[2136]: Stopping lomiri-app-launch--application-click--ratatoskr.philipa_shareplugin_260123123714--.service...
+Jan 23 13:45:21 hatshepsut systemd[2136]: lomiri-app-launch--application-click--ratatoskr.philipa_shareplugin_260123123714--.service: Succeeded.
+Jan 23 13:45:21 hatshepsut systemd[2136]: Stopped lomiri-app-launch--application-click--ratatoskr.philipa_shareplugin_260123123714--.service.
+Jan 23 13:45:21 hatshepsut aa-exec[4790]: QObject::killTimer: Timers cannot be stopped from another thread
+Jan 23 13:45:21 hatshepsut aa-exec[4790]: QObject::startTimer: Timers cannot be started from another thread
+Jan 23 13:45:21 hatshepsut lomiri[3136]: [2026-01-23:13:45:21.199] qtmir.sessions: TaskController::onSessionStopping - sessionName=shareplugin
+Jan 23 13:45:21 hatshepsut zeitgeist-fts[3848]: Unable to get info on application://lomiri-app-launch.desktop
+Jan 23 13:45:21 hatshepsut zeitgeist-fts[3848]: Unable to get info on application://filemanager.ubports_filemanager.desktop
+Jan 23 13:45:21 hatshepsut lomiri[3136]: [2026-01-23:13:45:21.230] ApplicationManager::onProcessStopped reports stop of appId= "ratatoskr.philipa_shareplugin" which AppMan is not managing, ignoring the event
+Jan 23 13:45:22 hatshepsut lomiri[3136]: [2026-01-23:13:45:22.301] file:///usr/share/lomiri//OrientedShell.qml:286:5: QML Shell: Binding loop detected for property "atDesktop"
+Jan 23 13:45:22 hatshepsut lomiri[3136]: [2026-01-23:13:45:22.301] file:///usr/share/lomiri//OrientedShell.qml:286:5: QML Shell: Binding loop detected for property "atDesktop"
+Jan 23 13:45:22 hatshepsut aa-exec[4790]: qt.qpa.mirclient: Attempted to deliver an event to a non-existent window, ignoring.
+Jan 23 13:45:22 hatshepsut lomiri[3136]: [2026-01-23:13:45:22.382] qtmir.sessions: TaskController::onSessionStopping - sessionName=lomiri-filemanager-app
+Jan 23 13:45:22 hatshepsut lomiri[3136]: [2026-01-23:13:45:22.383] qtmir.sessions: Wakelock released "15"
+Jan 23 13:45:22 hatshepsut repowerd[1426]: LogindSessionTracker: dbus_get_session_by_pid() failed: GDBus.Error:org.freedesktop.login1.NoSessionForPID: PID 3136 does not belong to any known session
+Jan 23 13:45:22 hatshepsut systemd[2136]: lomiri-app-launch--application-click--filemanager.ubports_filemanager_1.1.4--.service: Succeeded.
+Jan 23 13:45:22 hatshepsut lomiri[3136]: [2026-01-23:13:45:22.416] ApplicationManager::onProcessStopped reports stop of appId= "filemanager.ubports_filemanager" which AppMan is not managing, ignoring the event
+
