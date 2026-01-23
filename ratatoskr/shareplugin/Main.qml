@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml              Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-01-22
- * Version : 0.0.5
+ * Date    : 2026-01-23
+ * Version : 0.0.6
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -12,6 +12,7 @@
  * - 2025-12-25 (0.0.3) : Switched to QQmlApplicationEngine.
  * - 2026-01-21 (0.0.4) : Fixed applicationName to match manifest.
  * - 2026-01-22 (0.0.5) : Fixed ContentHub integration (renamed transfer vars).
+ * - 2026-01-23 (0.0.6) : Fixed device list visibility (hide file preview when empty).
  *========================================================*/
 
 import QtQuick 2.4
@@ -169,6 +170,7 @@ MainView {
             Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                visible: root.fileNames.length > 0
                 GridLayout {
                     anchors.fill: parent
                     columns: Math.ceil(Math.sqrt(root.fileNames.length))
