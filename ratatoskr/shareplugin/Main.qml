@@ -2,7 +2,7 @@
  * Program : Main.qml              Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
  * Date    : 2026-01-23
- * Version : 0.0.8
+ * Version : 0.0.9
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -15,6 +15,7 @@
  * - 2026-01-23 (0.0.6) : Fixed device list visibility (hide file preview when empty).
  * - 2026-01-23 (0.0.7) : Fixed Page anchoring to fill parent MainView.
  * - 2026-01-23 (0.0.8) : Removed fixed MainView dimensions to allow proper sizing.
+ * - 2026-01-23 (0.0.9) : Added debug logging to ListView to diagnose display issue.
  *========================================================*/
 
 import QtQuick 2.4
@@ -281,11 +282,20 @@ MainView {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
+                Rectangle {
+                    anchors.fill: parent
+                    color: "transparent"
+                }
+
                 ListView {
                     anchors.fill: parent
                     model: btModel
                     visible: !root.peerSelected
                     clip: true
+
+                    Component.onCompleted: console.log("ListView created, model count:", btModel.count)
+                    
+                    onCountChanged: console.log("ListView count changed:", count)
 
                     delegate: ListItem {
                         ListItemLayout {
