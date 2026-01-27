@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml              Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-01-23
- * Version : 0.0.9
+ * Date    : 2026-01-27
+ * Version : 0.0.11
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -16,6 +16,8 @@
  * - 2026-01-23 (0.0.7) : Fixed Page anchoring to fill parent MainView.
  * - 2026-01-23 (0.0.8) : Removed fixed MainView dimensions to allow proper sizing.
  * - 2026-01-23 (0.0.9) : Added debug logging to ListView to diagnose display issue.
+ * - 2026-01-27 (0.0.10): Fixed ListView delegate rendering (removed wrapper Rectangle, added explicit height).
+ * - 2026-01-27 (0.0.11): Added extensive debug logging to track model-view binding.
  *========================================================*/
 
 import QtQuick 2.4
@@ -108,6 +110,7 @@ MainView {
                 "deviceName": device,
                 "name": device
             });
+            console.log("Model count after append:", deviceListModel.count)
         }
         onErrorChanged: {
             switch (btModel.error) {
@@ -298,22 +301,31 @@ MainView {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
-                Rectangle {
-                    anchors.fill: parent
-                    color: "transparent"
-                }
-
                 ListView {
                     anchors.fill: parent
                     model: deviceListModel
                     visible: !root.peerSelected
                     clip: true
 
-                    Component.onCompleted: console.log("ListView created, model count:", deviceListModel.count)
+                    Component.onCompleted: {
+                        console.log("ListView created, model count:", deviceListModel.count)
+                        console.log("ListView model is:", model)
+                    }
                     
-                    onCountChanged: console.log("ListView count changed:", count)
+                    onCountChanged: {
+                        console.log("ListView count changed:", count)
+                        console.log("ListView visible:", visible)
+                    }
+                    
+                    onModelChanged: console.log("ListView model changed, new count:", count)
 
                     delegate: ListItem {
+                        height: units.gu(7)
+                        
+                        Component.onCompleted: {
+                            console.log("Delegate created for:", model.remoteAddress)
+                        }
+                        
                         ListItemLayout {
                             title.text: (model.deviceName ? model.deviceName : model.name) || model.remoteAddress
                         }
