@@ -34,6 +34,10 @@ MainView {
     property var fileNames: []
     property bool peerSelected: false
 
+    ListModel {
+        id: deviceListModel
+    }
+
     BtTransfer {
         id: btTransfer
     }
@@ -92,7 +96,19 @@ MainView {
         discoveryMode: BluetoothDiscoveryModel.DeviceDiscovery
         onDiscoveryModeChanged: console.log("Discovery mode: " + discoveryMode)
         onServiceDiscovered: console.log("Found new service " + service.deviceAddress + " " + service.deviceName + " " + service.serviceName);
-        onDeviceDiscovered: console.log("New device: " + device)
+        onDeviceDiscovered: {
+            console.log("New device: " + device)
+            for (var i = 0; i < deviceListModel.count; i++) {
+                if (deviceListModel.get(i).remoteAddress === device) {
+                    return;
+                }
+            }
+            deviceListModel.append({
+                "remoteAddress": device,
+                "deviceName": device,
+                "name": device
+            });
+        }
         onErrorChanged: {
             switch (btModel.error) {
             case BluetoothDiscoveryModel.PoweredOffError:
@@ -289,23 +305,23 @@ MainView {
 
                 ListView {
                     anchors.fill: parent
-                    model: btModel
+                    model: deviceListModel
                     visible: !root.peerSelected
                     clip: true
 
-                    Component.onCompleted: console.log("ListView created, model count:", btModel.count)
+                    Component.onCompleted: console.log("ListView created, model count:", deviceListModel.count)
                     
                     onCountChanged: console.log("ListView count changed:", count)
 
                     delegate: ListItem {
                         ListItemLayout {
-                            title.text: (deviceName ? deviceName : name)
+                            title.text: (model.deviceName ? model.deviceName : model.name) || model.remoteAddress
                         }
 
                         onClicked: {
                             btModel.continuousDiscovery = false;
                             for (var i = 0; i < root.fileNames.length; i++) {
-                                btTransfer.sendFile(remoteAddress, root.fileNames[i])
+                                btTransfer.sendFile(model.remoteAddress, root.fileNames[i])
                             }
                             root.peerSelected = true;
                         }
