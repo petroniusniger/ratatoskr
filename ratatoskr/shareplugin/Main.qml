@@ -2,7 +2,7 @@
  * Program : Main.qml              Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
  * Date    : 2026-01-27
- * Version : 0.0.11
+ * Version : 0.0.12
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -18,6 +18,7 @@
  * - 2026-01-23 (0.0.9) : Added debug logging to ListView to diagnose display issue.
  * - 2026-01-27 (0.0.10): Fixed ListView delegate rendering (removed wrapper Rectangle, added explicit height).
  * - 2026-01-27 (0.0.11): Added extensive debug logging to track model-view binding.
+ * - 2026-01-27 (0.0.12): Added forceLayout() and Connections to fix ListView update issue.
  *========================================================*/
 
 import QtQuick 2.4
@@ -38,6 +39,10 @@ MainView {
 
     ListModel {
         id: deviceListModel
+        
+        onCountChanged: {
+            console.log("deviceListModel count changed to:", count)
+        }
     }
 
     BtTransfer {
@@ -301,11 +306,24 @@ MainView {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
+                Connections {
+                    target: deviceListModel
+                    onCountChanged: {
+                        console.log("Connections: deviceListModel count is now:", deviceListModel.count)
+                        if (deviceListView.model === deviceListModel) {
+                            deviceListView.forceLayout()
+                        }
+                    }
+                }
+
                 ListView {
+                    id: deviceListView
                     anchors.fill: parent
                     model: deviceListModel
                     visible: !root.peerSelected
                     clip: true
+                    spacing: units.gu(1)
+                    cacheBuffer: 0
 
                     Component.onCompleted: {
                         console.log("ListView created, model count:", deviceListModel.count)
@@ -315,11 +333,16 @@ MainView {
                     onCountChanged: {
                         console.log("ListView count changed:", count)
                         console.log("ListView visible:", visible)
+                        console.log("ListView contentHeight:", contentHeight)
                     }
                     
-                    onModelChanged: console.log("ListView model changed, new count:", count)
+                    onModelChanged: {
+                        console.log("ListView model changed, new count:", count)
+                        forceLayout()
+                    }
 
                     delegate: ListItem {
+                        width: ListView.view ? ListView.view.width : parent.width
                         height: units.gu(7)
                         
                         Component.onCompleted: {
