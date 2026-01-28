@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml              Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-01-27
- * Version : 0.0.12
+ * Date    : 2026-01-28
+ * Version : 0.0.15
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -19,6 +19,9 @@
  * - 2026-01-27 (0.0.10): Fixed ListView delegate rendering (removed wrapper Rectangle, added explicit height).
  * - 2026-01-27 (0.0.11): Added extensive debug logging to track model-view binding.
  * - 2026-01-27 (0.0.12): Added forceLayout() and Connections to fix ListView update issue.
+ * - 2026-01-28 (0.0.13): Fixed ListView contentHeight calculation by removing cacheBuffer=0.
+ * - 2026-01-28 (0.0.14): Fixed GridLayout space allocation for hidden file preview Item.
+ * - 2026-01-28 (0.0.15): Added diagnostic logging for parent Item and ListView dimensions.
  *========================================================*/
 
 import QtQuick 2.4
@@ -194,7 +197,8 @@ MainView {
 
             Item {
                 Layout.fillWidth: true
-                Layout.fillHeight: true
+                Layout.fillHeight: root.fileNames.length > 0
+                Layout.preferredHeight: root.fileNames.length > 0 ? -1 : 0
                 visible: root.fileNames.length > 0
                 GridLayout {
                     anchors.fill: parent
@@ -303,8 +307,15 @@ MainView {
             }
 
             Item {
+                id: deviceListContainer
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                
+                onWidthChanged: console.log("deviceListContainer width:", width)
+                onHeightChanged: console.log("deviceListContainer height:", height)
+                Component.onCompleted: {
+                    console.log("deviceListContainer created - width:", width, "height:", height)
+                }
 
                 Connections {
                     target: deviceListModel
@@ -323,17 +334,22 @@ MainView {
                     visible: !root.peerSelected
                     clip: true
                     spacing: units.gu(1)
-                    cacheBuffer: 0
+
+                    onWidthChanged: console.log("ListView width:", width)
+                    onHeightChanged: console.log("ListView height:", height)
 
                     Component.onCompleted: {
                         console.log("ListView created, model count:", deviceListModel.count)
                         console.log("ListView model is:", model)
+                        console.log("ListView width:", width, "height:", height)
+                        console.log("ListView parent width:", parent.width, "parent height:", parent.height)
                     }
                     
                     onCountChanged: {
                         console.log("ListView count changed:", count)
                         console.log("ListView visible:", visible)
                         console.log("ListView contentHeight:", contentHeight)
+                        console.log("ListView width:", width, "height:", height)
                     }
                     
                     onModelChanged: {
