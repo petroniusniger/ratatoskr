@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Bluetooth
+Name=BT Plugin
 Exec=shareplugin
 Icon=ratatoskr
 Terminal=false
