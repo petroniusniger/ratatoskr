@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml              Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-01-29
- * Version : 0.1.0
+ * Date    : 2026-02-02
+ * Version : 0.1.2
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -14,6 +14,8 @@
  * - 2026-01-22 (0.0.5) : Fixed ContentHub integration (renamed transfer vars).
  * - 2026-01-29 (0.0.17): Added Window root element required by QQmlApplicationEngine.
  * - 2026-01-29 (0.1.0) : Removed file preview, cleaned debug logs, fixed indentation.
+ * - 2026-02-02 (0.1.1) : Added device name resolution using DeviceNameResolver.
+ * - 2026-02-02 (0.1.2) : Added dynamic name update monitoring for newly discovered devices.
  *========================================================*/
 
 import QtQuick 2.4
@@ -45,6 +47,20 @@ Window {
 
         BtTransfer {
             id: btTransfer
+        }
+
+        DeviceNameResolver {
+            id: deviceNameResolver
+            onDeviceNameChanged: {
+                console.log("Device name updated:", address, "->", name);
+                for (var i = 0; i < deviceListModel.count; i++) {
+                    if (deviceListModel.get(i).remoteAddress === address) {
+                        deviceListModel.setProperty(i, "deviceName", name);
+                        deviceListModel.setProperty(i, "name", name);
+                        break;
+                    }
+                }
+            }
         }
 
         Connections {
@@ -106,11 +122,14 @@ Window {
                         return;
                     }
                 }
+                var deviceName = deviceNameResolver.resolveDeviceName(device);
+                console.log("Resolved device name:", deviceName, "for address:", device);
                 deviceListModel.append({
                     "remoteAddress": device,
-                    "deviceName": device,
-                    "name": device
+                    "deviceName": deviceName,
+                    "name": deviceName
                 });
+                deviceNameResolver.monitorDevice(device);
             }
             onErrorChanged: {
                 switch (btModel.error) {

@@ -6,11 +6,13 @@ set(SHAREPLUGIN_SOURCES
     main.cpp
     bttransfer.cpp
     adapter.cpp
+    devicenameresolver.cpp
 )
 
 set(SHAREPLUGIN_HEADERS
     bttransfer.h
     adapter.h
+    devicenameresolver.h
 )
 
 # Shareplugin resources
