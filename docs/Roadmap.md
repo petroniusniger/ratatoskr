@@ -19,6 +19,7 @@
   changes)
 - [ ] Code cleanup: remove objects that are not needed (BluetoothManager?,
   DeviceDiscovery?, OBEXTransferService?)
+- [ ] App logs its version on startup
 
 ### SharePlugin
 
@@ -33,6 +34,7 @@
   filtering used to populate the device list:
   - filter out devices whose name is their MAC address
   - filter out devices that are not paired
+- [ ] SharePlugin logs its version on startup
 
 ## Bugs
 

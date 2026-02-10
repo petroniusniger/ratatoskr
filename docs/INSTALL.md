@@ -3,6 +3,7 @@
 ## Standard Installation
 
 The `.click` packages can be installed normally via:
+
 - OpenStore (requires manual review due to `bluetooth` policy group)
 - Manual installation: `pkcon install-local ratatoskr.philipa_*.click`
 
@@ -37,6 +38,7 @@ You should see the D-Bus receive rules at the end of the profile.
 ### Testing
 
 After applying the override:
+
 1. Ensure Bluetooth is enabled and paired with a device
 2. Start the Ratatoskr app
 3. Send a file from your paired device
@@ -67,6 +69,7 @@ See `docs/ADR-004-apparmor-dbus-receive-permissions.md` for technical details ab
 ## Support
 
 If you encounter issues:
+
 1. Check that OBEX daemon is running: `ps aux | grep obexd`
 2. Verify AppArmor profile is loaded: `sudo aa-status | grep ratatoskr`
 3. Check for AppArmor denials: `sudo journalctl | grep apparmor | grep DENIED | grep ratatoskr`

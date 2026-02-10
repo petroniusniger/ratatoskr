@@ -15,18 +15,18 @@ Ratatoskr is a Bluetooth file transfer application for Ubuntu Touch, with a prim
 
 ## Attribution
 
-This application is based on ubtd (Bluetooth File Transfer) originally developed by:
+This application is based on 'ubtd' (Bluetooth File Transfer) originally developed by:
 
 - **Michael Zanetti** <michael.zanetti@canonical.com> - Original development
 - **Ian L.** (floop2/fourloop2002) - Ubuntu Touch 16.04 and 20.04 ports
 
-Adapted and extended as Ratatoskr by Philippe Andersson for Les Ateliers du Heron, 2025.
+Adapted and extended as 'Ratatoskr' by Philippe Andersson for Les Ateliers du Heron, 2025.
 
 ## Build Instructions
 
 ```bash
 cd ratatoskr/
-clickable build
+clickable build --arch=arm64
 ```
 
 ## Run in Desktop Mode
