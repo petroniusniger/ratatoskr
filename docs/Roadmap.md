@@ -1,5 +1,5 @@
 # Roadmap for `ratatoskr` app
-(pan, v4, 10/02/2026)
+(pan, v5, 12/02/2026)
 
 
 ## Generalities
@@ -19,7 +19,7 @@
   changes)
 - [ ] Code cleanup: remove objects that are not needed (BluetoothManager?,
   DeviceDiscovery?, OBEXTransferService?)
-- [ ] App logs its version on startup
+- [x] App logs its version on startup
 
 ### SharePlugin
 
@@ -34,7 +34,7 @@
   filtering used to populate the device list:
   - filter out devices whose name is their MAC address
   - filter out devices that are not paired
-- [ ] SharePlugin logs its version on startup
+- [x] SharePlugin logs its version on startup
 
 ## Bugs
 
@@ -43,7 +43,7 @@
 ### SharePlugin
 
 - [x] Plugin crashes and causes phone to restart
-- [ ] Plugin has no icon -- should use `ratatoskr/shareplugin/icon.svg` (BT 
+- [x] Plugin has no icon -- should use `ratatoskr/shareplugin/icon.svg` (BT 
   logo)
 - [x] the device list at present only contains MAC addresses -- it should also 
   show the device name
