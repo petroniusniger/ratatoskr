@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : main.cpp                    Project : ratatoskr
  * Author  : Philippe Andersson + Copilot CLI.
- * Date    : 2026-02-11
- * Version : 0.0.2
+ * Date    : 2026-02-12
+ * Version : 0.0.3
  * Notice  : (c) Les Ateliers du Heron, 2025
  * License : GNU GPL v3 or later
  * Comment : Main application entry point.
@@ -11,6 +11,7 @@
  * - 2025-12-18 (0.0.1) : Initial adaptation from ubtd-20.04.
  * - 2025-12-19 (0.0.1) : Added BluetoothManager, DeviceDiscovery, OBEXTransfer.
  * - 2026-02-11 (0.0.2) : Added version logging at startup.
+ * - 2026-02-12 (0.0.3) : Removed unused BluetoothManager and OBEXTransferService.
  *========================================================*/
 
 #include <QGuiApplication>
@@ -21,9 +22,7 @@
 
 #include "adapter.h"
 #include "obexd.h"
-#include "bluetoothmanager.h"
 #include "devicediscovery.h"
-#include "obextransfer.h"
 
 int main(int argc, char *argv[])
 {
@@ -34,21 +33,14 @@ int main(int argc, char *argv[])
 
     Adapter adapter;
     Obexd obexd;
-    BluetoothManager bluetoothManager;
     DeviceDiscovery deviceDiscovery;
-    OBEXTransferService obexTransferService;
 
     QQuickView view;
 
     view.rootContext()->setContextProperty("obexd", &obexd);
-    view.rootContext()->setContextProperty("bluetoothManager", &bluetoothManager);
     view.rootContext()->setContextProperty("deviceDiscovery", &deviceDiscovery);
-    view.rootContext()->setContextProperty("obexTransferService", &obexTransferService);
     qmlRegisterUncreatableType<Transfer>("Ratatoskr", 1, 0, "Transfer", "get them from obexd");
     qmlRegisterUncreatableType<BluetoothDevice>("Ratatoskr", 1, 0, "BluetoothDevice", "get them from deviceDiscovery");
-    qmlRegisterUncreatableType<OBEXTransfer>("Ratatoskr", 1, 0, "OBEXTransfer", "get them from obexTransferService");
-
-    bluetoothManager.initialize();
 
     view.setSource(QUrl(QStringLiteral("qrc:///Main.qml")));
     view.setResizeMode(QQuickView::SizeRootObjectToView);
