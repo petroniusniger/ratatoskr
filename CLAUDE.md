@@ -7,8 +7,9 @@ container managed by 'clickable'
 - Libraries: 
   - Qt/QML 5.12.9
 - Build tool: 
-  - for host arch. (emulator): `clickable build` in `ratatoskr/` subfolder
-  - for target arch. (aarch64): `clickable build --arch arm64` in `ratatoskr/` subfolder
+  - for host arch. (emulator): `./build.sh build` in `ratatoskr/` subfolder
+  - for target arch. (aarch64): `./build.sh build --arch arm64` in `ratatoskr/` subfolder
+  - Note: Use `build.sh` wrapper instead of calling `clickable` directly to ensure VERSION.txt is regenerated
 - Emulator: clickable-ut 8.6.0 + docker 28.5.1
 
 # Project Structure

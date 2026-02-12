@@ -1,5 +1,3 @@
 clickable_minimum_required: 8.0.0
 builder: cmake
 kill: ratatoskr
-scripts:
-  prebuild: ./get-version.sh

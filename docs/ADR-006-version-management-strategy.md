@@ -60,6 +60,18 @@ The `BUILD_VERSION` macro will be available as a string literal at compile time.
    - Add `qDebug()` statement immediately after `QGuiApplication` initialization
    - Format: `"Ratatoskr SharePlugin" BUILD_VERSION "starting..."`
 
+3. Version generation (`ratatoskr/get-version.sh`):
+   - Script runs on host (where git is available) before Docker build
+   - Generates `VERSION.txt` with format: `vX.Y.Z.YYMMDDHHMMSS`
+   - CMakeLists.txt reads VERSION.txt and exposes as BUILD_VERSION macro
+
+4. Build process (`ratatoskr/build.sh`):
+   - Wrapper script that calls `get-version.sh` before invoking clickable
+   - Ensures VERSION.txt is always regenerated with current timestamp
+   - Usage: `./build.sh build` or `./build.sh build --arch arm64`
+
+**Important**: Always use `./build.sh` instead of calling `clickable` directly to ensure version timestamps are current.
+
 ## Consequences
 
 ### Positive
@@ -73,6 +85,8 @@ The `BUILD_VERSION` macro will be available as a string literal at compile time.
 - Requires git repository for builds (already a requirement)
 - Version only known at compile time (not modifiable at runtime)
 - Timestamp-based dev versions not semantic versioning compliant
+- **Developers must use `./build.sh` wrapper instead of calling `clickable` directly**
+- VERSION.txt must be regenerated before each build for accurate timestamps
 
 ### Neutral
 - Developers must use git tags for releases

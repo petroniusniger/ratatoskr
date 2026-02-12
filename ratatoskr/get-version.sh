@@ -17,3 +17,6 @@ fi
 # Write to file that CMake will read
 echo "$VERSION" > ratatoskr/VERSION.txt
 echo "Generated VERSION.txt: $VERSION"
+
+# Touch CMakeLists.txt to force reconfiguration
+touch ratatoskr/CMakeLists.txt
