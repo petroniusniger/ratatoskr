@@ -134,7 +134,7 @@ Transfer::Status Transfer::statusStringToStatus(const QString &statusString)
 
 void Transfer::propertiesChanged(const QString &interface, const QVariantMap &changedProperties, const QStringList &invalidatedProperties)
 {
-    qDebug() << "properties changed" << interface << changedProperties << invalidatedProperties;
+    //qDebug() << "properties changed" << interface << changedProperties << invalidatedProperties;
     if (interface != "org.bluez.obex.Transfer1") {
         return;
     }
