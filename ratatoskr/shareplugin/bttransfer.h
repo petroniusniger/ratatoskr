@@ -1,5 +1,5 @@
 /*==========================================================
- * Program : bttransfer.h              Project : ratatoskr
+ * Program : bttransfer.h                Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
  * Date    : 2025-12-25
  * Version : 0.0.3
