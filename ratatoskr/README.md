@@ -4,13 +4,15 @@ Bluetooth File Transfer for Ubuntu Touch 20.04
 
 ## Description
 
-Ratatoskr is a Bluetooth file transfer application for Ubuntu Touch, with a 
+*Ratatoskr* is a Bluetooth file transfer application for Ubuntu Touch, with a 
 primary focus on sending contacts (VCF cards) to Bluetooth car kits. It also 
 supports bi-directional file transfer with PCs.
 
-The app is called after the mischievous, gossipy squirrel in Norse mythology 
-who inhabits the world tree, Yggdrasil. He seemed like a worthy companion to 
-Harald Bluetooth ;-)
+The app is named after the mischievous, gossipy squirrel in Norse mythology 
+who inhabits the world tree, Yggdrasil and carries slanderous messages between 
+the eagles perched atop it and the dragon Níðhöggr who dwells beneath  
+the roots of the tree. He seemed to me like a worthy companion to Harald 
+Bluetooth (provided he doesn't distort your files too much) ;-)
 
 ## Features
 
@@ -28,6 +30,11 @@ This application is based on 'ubtd' (Bluetooth File Transfer) originally develop
 
 Adapted and extended as 'Ratatoskr' by Philippe Andersson for Les Ateliers du Heron, 2025.
 
+The description of the Norse mythological character is borrowed from its
+[Wikipedia page](https://en.wikipedia.org/wiki/Ratatoskr).
+
+Original *Ratatoskr* icon built by *ChatGPT*.
+
 ## Usage guidelines
 
 ### Sending files / vCards
@@ -41,18 +48,18 @@ Adapted and extended as 'Ratatoskr' by Philippe Andersson for Les Ateliers du He
   closed to the top)
 - the target device may prompt to accept the transfer
 - a progress bar will appear during transfer and a green button will take its
-  place when the transfer is complete
+  place when the transfer is complete -- tap it to close the BT Plugin
   
 **Please note:** if you are surrounded by a large number of BT devices, there
-may be a lag between tapping the target device in the list and the actual start
-of the file transfer.
+may be a lag (of up to several seconds) between tapping the target device in 
+the list and the actual start of the file transfer.
 
 ### Receiving files
 
 - pair with remote device and connect to it through System Settings
-- start Ratatoskr
+- start Ratatoskr app
 - on remote device, share file to phone over BT
-- the file appears on the main Ratatoskr screen (with name and a small 
+- the file appears on the main Ratatoskr screen (with its name and a small 
   thumbnail)
 - left-swipe on the file, tap Download icon
 - on "Open With" screen, select File Manager
