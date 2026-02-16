@@ -1,7 +1,7 @@
 # Ratatoskr Architecture Overview
 
-**Version**: 0.0.1  
-**Date**: 2025-12-18  
+**Version**: 0.0.10  
+**Date**: 2026-02-16  
 **Based on**: ubtd-20.04 by Michael Zanetti and Ian L.
 
 ## Architecture Summary
@@ -147,37 +147,31 @@ ratatoskr/
 ## Security
 
 ### AppArmor Policies
-- **Template**: `unconfined` (required for Bluetooth access)
-- **Policy Groups**:
-  - `networking` - Network access
-  - `content_exchange_source` - ContentHub integration
-- **Policy Version**: 20.04
+
+- Main app:
+  - **Template**: `unconfined` (required for direct OBEX interaction)
+  - **Policy Groups**:
+    - `bluetooth` - BT stack access
+    - `networking` - Network access
+    - `content_exchange` - ContentHub integration
+  - **Policy Version**: 20.04
+- SharePlugin:
+  - **Policy Groups**:
+    - `bluetooth` - BT stack access
+    - `networking` - Network access
+    - `content_exchange` - ContentHub integration
+  - **Policy Version**: 20.04
 
 ### Permissions Required
+
 - Bluetooth device access
 - D-Bus system bus access (for BlueZ)
 - D-Bus session bus access (for OBEX daemon)
-- File system access for saving/loading files
-
-## Known Limitations (Sprint 001)
-
-1. **QML Component Issues**: UbuntuShape deprecated in Lomiri, needs update
-2. **No Bluetooth Hardware in Desktop Mode**: OBEX daemon not available in emulator
-3. **File Picker**: Not yet integrated
-4. **Contacts Export**: VCF generation not yet implemented
-
-## Future Enhancements
-
-### Sprint 002+
-- Fix QML component deprecations
-- Integrate contacts API for VCF export
-- Enhanced device discovery UI
-- Car kit compatibility testing
-- Better error handling and user feedback
+- File system access to application cache for saving/loading files
 
 ## References
 
-- Original work: ubtd by Michael Zanetti (Canonical)
+- Original work: 'ubtd' by Michael Zanetti (Canonical)
 - UT 16.04/20.04 ports: Ian L. (floop2/fourloop2002)
 - Qt Bluetooth: https://doc.qt.io/qt-5/qtbluetooth-index.html
 - BlueZ: http://www.bluez.org/

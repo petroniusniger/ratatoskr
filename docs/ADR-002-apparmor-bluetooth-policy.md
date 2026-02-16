@@ -20,6 +20,7 @@ After completing Sprint 001 with the ubtd-20.04 codebase integration, automated 
 ```
 
 **Impact:**
+
 - ❌ Blocks OpenStore publication (automatic review rejection)
 - ❌ Security vulnerability (no AppArmor protection)
 - ❌ Doesn't meet Ubuntu Touch platform standards
@@ -28,6 +29,7 @@ After completing Sprint 001 with the ubtd-20.04 codebase integration, automated 
 ### Why We Inherited This
 
 Ian L.'s ubtd-20.04 used `unconfined` because:
+
 1. Quick development iteration without AppArmor complexity
 2. Bluetooth historically required extensive system permissions
 3. ubtd was a proof-of-concept, not production software
@@ -36,6 +38,7 @@ Ian L.'s ubtd-20.04 used `unconfined` because:
 ### Requirements
 
 For Ratatoskr, we need:
+
 1. **Bluetooth adapter access** - Detect and control local adapter
 2. **BlueZ D-Bus access** - Communicate with org.bluez service
 3. **OBEX daemon access** - Register agent with org.openobex service
@@ -51,6 +54,7 @@ For Ratatoskr, we need:
 ### Updated Configuration
 
 **For main app (`ratatoskr.apparmor`):**
+
 ```json
 {
     "policy_groups": [
@@ -63,6 +67,7 @@ For Ratatoskr, we need:
 ```
 
 **For shareplugin (`shareplugin/shareplugin.apparmor`):**
+
 ```json
 {
     "policy_groups": [
@@ -77,12 +82,14 @@ For Ratatoskr, we need:
 ### What This Provides
 
 The `bluetooth` policy group grants:
+
 - Administrative access to BlueZ 5 Bluetooth stack
 - D-Bus communication with org.bluez
 - Access to Bluetooth devices and sockets
 - Necessary system calls for Bluetooth operations
 
 Combined with existing policy groups:
+
 - `networking` - Network operations
 - `content_exchange_source` / `content_exchange` - ContentHub integration
 
@@ -100,11 +107,13 @@ Combined with existing policy groups:
 ### Why Not Custom AppArmor Profile?
 
 **Advantages of custom profile:**
+
 - Maximum security (principle of least privilege)
 - Precise control over every permission
 - Best practice for security-conscious apps
 
 **Disadvantages for Sprint 002:**
+
 - Requires AppArmor expertise
 - Time-consuming development (days, not hours)
 - Iterative testing needed (complain mode → enforce mode)
@@ -117,6 +126,7 @@ Combined with existing policy groups:
 ### Why Not Keep "unconfined"?
 
 **Completely unacceptable because:**
+
 - Cannot be published to OpenStore (automatic rejection)
 - Disables all AppArmor security protections
 - Violates Ubuntu Touch platform standards
@@ -187,6 +197,7 @@ Even for testing, `bluetooth` policy group works just as well.
 ### Rollback Plan
 
 If `bluetooth` policy group proves insufficient:
+
 1. Document specific AppArmor denials from logs
 2. Create ADR-003 for custom profile decision
 3. Develop minimal custom AppArmor profile
@@ -204,6 +215,7 @@ journalctl | grep apparmor
 ```
 
 If denials occur:
+
 - Document the denied operation
 - Assess if functionality is impacted
 - Evaluate if custom profile is needed
@@ -216,6 +228,7 @@ If denials occur:
 If Sprint 003+ requires maximum security hardening:
 
 **Profile elements needed:**
+
 ```
 # D-Bus access
 dbus (send, receive) bus=system name=org.bluez,
@@ -234,6 +247,7 @@ capability net_bind_service,
 ```
 
 **Process:**
+
 1. Start with `bluetooth` abstractions
 2. Profile actual app behavior
 3. Refine in complain mode
@@ -245,6 +259,7 @@ capability net_bind_service,
 ### Security Audit
 
 If publishing to OpenStore or enterprise deployment requires security audit:
+
 - Document all permissions granted
 - Justify each policy group
 - Provide threat model
