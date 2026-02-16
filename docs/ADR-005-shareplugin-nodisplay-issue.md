@@ -63,7 +63,8 @@ The current SharePlugin is a hybrid that doesn't fit either pattern:
 2. **Safety**: Eliminates the crash completely
 3. **Compatibility**: Follows ContentHub's expected patterns
 4. **User Experience**: The UI provides useful feedback during transfer
-5. **Low Impact**: The app appearing in the drawer is acceptable
+5. **Low Impact**: The app appearing in the drawer is acceptable for a first 
+   release
 
 Alternative (headless service) would require:
 
@@ -150,7 +151,7 @@ Testing confirmed the SharePlugin now displays correctly when invoked from Conte
 2. ~~Fix Window root element issue~~ ✅ Completed (2026-01-29)
 3. ~~Add device name resolution for better UX~~ ✅ Completed (2026-02-02)
 4. ~~Filter MAC-based device names~~ ✅ Completed (2026-02-05)
-5. Consider adding icon to distinguish from main app
+5. ~~Consider adding icon to distinguish from main app~~ Completed
 6. Document the dual-stack architecture
 7. Remove obsolete folders
 

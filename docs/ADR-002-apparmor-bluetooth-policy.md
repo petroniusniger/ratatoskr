@@ -7,7 +7,9 @@
 
 ## Context
 
-After completing Sprint 001 with the ubtd-20.04 codebase integration, automated review identified a critical security issue: the app uses the `unconfined` AppArmor template, which is not allowed for production apps.
+After completing Sprint 001 with the ubtd-20.04 codebase integration, automated 
+review identified a critical security issue: the app uses the `unconfined` 
+AppArmor template, which is not allowed for production apps.
 
 ### The Problem
 
@@ -42,7 +44,7 @@ For Ratatoskr, we need:
 1. **Bluetooth adapter access** - Detect and control local adapter
 2. **BlueZ D-Bus access** - Communicate with org.bluez service
 3. **OBEX daemon access** - Register agent with org.openobex service
-4. **File system access** - Save/load transferred files
+4. **File system access** - Save/load transferred files to/from cache
 5. **Network access** - Bluetooth is technically a network protocol
 6. **ContentHub integration** - Share files with other apps
 7. **OpenStore compliance** - Pass automated security review
@@ -256,17 +258,6 @@ capability net_bind_service,
 5. Document all permissions
 
 **Effort estimate:** 8-16 hours for development and testing
-
-### Security Audit
-
-If publishing to OpenStore or enterprise deployment requires security audit:
-
-- Document all permissions granted
-- Justify each policy group
-- Provide threat model
-- Consider custom profile if auditor recommends
-
-This is not required for community/personal use.
 
 ## Alternatives Considered
 

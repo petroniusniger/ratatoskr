@@ -48,7 +48,12 @@ This grants permission to receive the `AuthorizePush`, `Cancel`, and `Release` m
 - Must be reapplied after each app update
 - Not suitable for general users without shell access
 
-###Human Touch platform accepts custom D-Bus rules in AppArmor JSON manifests
+### Neutral
+- This approach is standard for power-user applications that need advanced system integration
+- Similar limitations affect other Ubuntu Touch apps requiring fine-grained permissions
+- The override approach is well-documented in Ubuntu Touch community
+
+### Ubuntu Touch platform accepts custom D-Bus rules in AppArmor JSON manifests
 - Changes to Ubuntu Touch's `bluetooth` policy group to include D-Bus receive permissions
 
 ## Implementation Notes
@@ -66,14 +71,12 @@ To enable OpenStore distribution, one of the following must happen:
 2. Ubuntu Touch adds support for custom D-Bus rules in JSON apparmor manifests  
 3. A new policy group (e.g., `bluetooth-agent`) is created for OBEX agent implementations
 
-### Neutral
-- This approach is standard for power-user applications that need advanced system integration
-- Similar limitations affect other Ubuntu Touch apps requiring fine-grained permissions
-- The override approach is well-documented in Ubuntu Touch community
-
 ## Alternatives Considered
 
-1. **Use `unconfined` policy template**: Rejected because it prevents OpenStore publication and violates security best practices
+1. **Use `unconfined` policy template**: Implemented as a temporary workaround
+   to allow first publication of a fully functional application. Working with 
+   the community to determine the best way to resolve the AppArmor OBEX access
+   denial will be the next priority.
 
 2. **Request new policy group from Ubuntu Touch**: Long-term solution but uncertain timeline - should be pursued in parallel
 

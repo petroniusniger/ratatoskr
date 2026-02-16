@@ -108,14 +108,7 @@ Two previous implementations exist:
 
 ### Phase 2 - Primary Goal (Sprint 002-003)
 - Enhance device discovery UI
-- Add contacts export to VCF
-- Optimize car kit compatibility
 - User testing with real car kits
-
-### Phase 3 - Secondary Goal (Sprint 004+)
-- Enhance file browser/picker
-- Improve incoming file handling
-- PC-specific optimizations
 
 ## Alternatives Considered
 

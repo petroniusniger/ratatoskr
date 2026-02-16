@@ -2,7 +2,7 @@
 
 **Date**: 2026-01-15  
 **Status**: Accepted  
-**Sprint**: 004
+**Sprint**: #004
 
 ## Context
 
