@@ -173,6 +173,7 @@ Even for testing, `bluetooth` policy group works just as well.
    - Remove `"template": "unconfined"` line
 
 3. Build and verify:
+
    ```bash
    clickable build
    # Should complete without security template errors

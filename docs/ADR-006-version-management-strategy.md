@@ -16,6 +16,7 @@ Ratatoskr consists of two executables (main app and SharePlugin) that need to lo
 ## Current State
 
 The root `CMakeLists.txt` already implements version generation:
+
 - Uses `git describe` to extract version from git tags
 - Defines `BUILD_VERSION` as a compiler flag (`-DBUILD_VERSION="${BUILD_VERSION}"`)
 - Tagged commits use the tag as version (e.g., `0.0.1`)
@@ -34,12 +35,14 @@ We will use the existing CMake-based version generation with the following strat
 
 ### 2. SharePlugin Access to Version
 The `BUILD_VERSION` preprocessor define will be made available to the SharePlugin by:
+
 - The root CMakeLists.txt already defines it globally via `add_definitions(-DBUILD_VERSION="${BUILD_VERSION}")`
 - This makes it available to all targets, including the SharePlugin subdirectory
 - No additional CMake changes needed
 
 ### 3. Runtime Logging
 Both executables will log their version at startup using:
+
 ```cpp
 qDebug() << "Application Name" << BUILD_VERSION << "starting...";
 ```

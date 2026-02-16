@@ -43,10 +43,12 @@ The SharePlugin and main app use **different Bluetooth stacks**:
 ### ContentHub Requirements
 
 ContentHub peers can be:
+
 1. **Visible applications** - Normal apps with UI (NoDisplay=false or omitted)
 2. **Headless services** - Background services without UI (requires different architecture)
 
 The current SharePlugin is a hybrid that doesn't fit either pattern:
+
 - Has a full QML UI with MainView (requires display)
 - Declares NoDisplay=true (attempts to be headless)
 - This contradiction causes ContentHub to fail
@@ -64,6 +66,7 @@ The current SharePlugin is a hybrid that doesn't fit either pattern:
 5. **Low Impact**: The app appearing in the drawer is acceptable
 
 Alternative (headless service) would require:
+
 - Complete QML restructuring to remove MainView
 - Different ContentHub API usage pattern
 - Higher complexity and risk

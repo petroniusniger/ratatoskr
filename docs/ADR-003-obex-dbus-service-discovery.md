@@ -15,6 +15,7 @@ Investigation of the Bluetooth file transfer failure revealed critical issues wi
 3. **Service Availability**: `obexd` doesn't auto-start on boot, and the app doesn't handle its absence gracefully
 
 Key evidence from investigation:
+
 - D-Bus error: `"The name org.bluez.obex was not provided by any .service files"`
 - OBEX logs show: `PUT(0x2), Forbidden(0x43)`
 - `busctl list` shows user processes use dynamic addresses, not named services
@@ -100,11 +101,13 @@ QString ObexD::findObexService() {
 ### Bus Change Rationale
 
 The current code uses system bus:
+
 ```cpp
 QDBusConnection m_connection = QDBusConnection::systemBus();
 ```
 
 Should be:
+
 ```cpp
 QDBusConnection m_connection = QDBusConnection::sessionBus();
 ```

@@ -61,6 +61,7 @@ This grants permission to receive the `AuthorizePush`, `Cancel`, and `Release` m
 ## Long-term Path Forward
 
 To enable OpenStore distribution, one of the following must happen:
+
 1. Ubuntu Touch platform adds D-Bus receive permissions to the `bluetooth` policy group
 2. Ubuntu Touch adds support for custom D-Bus rules in JSON apparmor manifests  
 3. A new policy group (e.g., `bluetooth-agent`) is created for OBEX agent implementations
