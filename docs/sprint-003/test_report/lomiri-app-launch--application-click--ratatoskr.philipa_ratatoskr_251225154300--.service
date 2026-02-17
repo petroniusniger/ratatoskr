@@ -1,7 +1,0 @@
-[25/12/2025 16:56] Creating a QMirClientScreen now
-[25/12/2025 16:56] reply QDBusMessage(type=MethodReturn, service=":1.48", signature="", contents=([]) )
-[25/12/2025 16:56] creating agent on dbus
-[25/12/2025 16:56] registering agent
-[25/12/2025 16:56] registering agent on obexd-server
-[25/12/2025 16:56] Error registering agent for the default adapter: QDBusError("org.freedesktop.DBus.Error.ServiceUnknown", "The name org.bluez.obex was not provided by any .service files")
-[25/12/2025 16:56] have entries: (".", "..", "HubIncoming", "qmlcache", "qtshadercache-arm64-little_endian-lp64") "/home/phablet/.cache/ratatoskr.philipa"
