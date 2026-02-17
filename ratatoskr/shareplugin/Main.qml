@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml                    Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-02-12
- * Version : 0.1.5
+ * Date    : 2026-02-17
+ * Version : 0.1.6
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -19,6 +19,7 @@
  * - 2026-02-05 (0.1.3) : Fixed list scrollability and added MAC-based name filtering.
  * - 2026-02-12 (0.1.4) : Added warning dialog for direct launch from App Drawer.
  * - 2026-02-12 (0.1.5) : Added comments explaining timing and Bluetooth state management.
+ * - 2026-02-17 (0.1.6) : Changed app author name to match GitHub account.
  *========================================================*/
 
 import QtQuick 2.4
@@ -39,7 +40,7 @@ Window {
     MainView {
         id: root
         anchors.fill: parent
-        applicationName: "ratatoskr.philipa"
+        applicationName: "ratatoskr.petroniusniger"
         anchorToKeyboard: true
 
         property var fileNames: []

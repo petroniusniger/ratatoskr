@@ -10,7 +10,7 @@ The `.click` packages can be installed normally via:
   - start File Manager, open `Downloads/` folder, tap package file
   - in "Open With", select OpenStore app
   - a warning will appear about installing untrusted apps: accept and continue
-- Manual installation (CLI alternative): `pkcon install-local ratatoskr.philipa_*.click`
+- Manual installation (CLI alternative): `pkcon install-local ratatoskr.petroniusniger_*.click`
 
 ## Known Limitations
 

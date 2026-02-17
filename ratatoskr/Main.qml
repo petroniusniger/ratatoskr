@@ -1,14 +1,15 @@
 /*==========================================================
  * Program : Main.qml                    Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2025-12-18
- * Version : 0.0.1
+ * Date    : 2026-02-17
+ * Version : 0.0.2
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
  * Comment : Main app QML interface
  * Modification History:
  * - 2025-12-18 (0.0.1) : Adapted from ubtd-20.04.
+ * - 2026-02-17 (0.0.2) : Changed app author name to match GitHub account.
  *========================================================*/
 
 import QtQuick 2.4
@@ -19,7 +20,7 @@ import Lomiri.Content 1.3
 import Ratatoskr 1.0
 
 MainView {
-    applicationName: "ratatoskr.philipa"
+    applicationName: "ratatoskr.petroniusniger"
 
 
     width: units.gu(100)

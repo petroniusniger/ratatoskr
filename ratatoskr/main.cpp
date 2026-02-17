@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : main.cpp                    Project : ratatoskr
  * Author  : Philippe Andersson + Copilot CLI.
- * Date    : 2026-02-12
- * Version : 0.0.4
+ * Date    : 2026-02-17
+ * Version : 0.0.5
  * Notice  : (c) Les Ateliers du Heron, 2025
  * License : GNU GPL v3 or later
  * Comment : Main application entry point.
@@ -12,6 +12,7 @@
  * - 2025-12-19 (0.0.2) : Added BluetoothManager, DeviceDiscovery, OBEXTransfer.
  * - 2026-02-11 (0.0.3) : Added version logging at startup.
  * - 2026-02-12 (0.0.4) : Removed unused BluetoothManager and OBEXTransferService.
+ * - 2026-02-17 (0.0.5) : Changed app author name to match GitHub account.
  *========================================================*/
 
 #include <QGuiApplication>
@@ -27,7 +28,7 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-    app.setApplicationName("ratatoskr.philipa");
+    app.setApplicationName("ratatoskr.petroniusniger");
 
     qDebug() << "Ratatoskr" << BUILD_VERSION << "starting...";
 
