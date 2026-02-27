@@ -1,14 +1,15 @@
 /*==========================================================
  * Program : transfer.cpp                Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2025-12-18
- * Version : 0.0.1
+ * Date    : 2026-02-27
+ * Version : 0.0.2
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
  * Comment : Transfer model for file transfer tracking
  * Modification History:
  * - 2025-12-18 (0.0.1) : Adapted from ubtd-20.04.
+ * - 2026-02-27 (0.0.2) : Sanitize incoming filename against path traversal (issue #12).
  *========================================================*/
 
 #include "transfer.h"
@@ -41,7 +42,11 @@ Transfer::Transfer(const QString &path, const QString &filePath, QObject *parent
 
         qDebug() << "name" << fetchProperty("Name");
 
-        m_filename = fetchProperty("Name").toString();
+        QString rawName = fetchProperty("Name").toString();
+        m_filename = QFileInfo(rawName).fileName();
+        if (m_filename != rawName) {
+            qWarning() << "Sanitized incoming filename: original=" << rawName << ", sanitized=" << m_filename;
+        }
         m_total = fetchProperty("Size").toULongLong();
         m_status = statusStringToStatus(fetchProperty("Status").toString());
         m_transferred = fetchProperty("Transferred").toULongLong();
