@@ -1,0 +1,87 @@
+Ratatoskr Project Test Procedure
+================================
+(pan, 06/03/2026)
+
+
+*************************************************************
+* Played by .......: <name>
+* Target release ..: <version>
+* Tested build ....: <verstring>
+* Played on .......: <host>
+* Host OS version .: <OS>
+* Host CPU arch ...: <arch>
+* Test run scope...: [full/partial]
+* Started on ......: <date - time>
+* Finished on .....: <date - time>
+*************************************************************
+
+To be executed before each official release of the project.
+
+Test results:
+-------------
+- [v]: Pass
+- [x]: Fail
+- [o]: VBA
+- [-]: Skip
+- [/]: N/A
+
+
+-------------------------------------------------------------------------------
+A./ Ratatoskr application package
+    ooooooooooooooooooooooooooooo
+
+
+0./ Installation procedure
+    ----------------------
+    
+- Build project source for target arch                                      [ ]
+- Copy resulting '.click' package to phone                                  [ ]
+- Install package by tapping it in File Manager                             [ ]
+- Use it to perform the below test procedure                                [ ]
+
+
+1./ Main App ('ratatoskr')
+    ----------------------
+
+- BT icon in upper-right corner leads to "Nearby Devices" screen            [ ]
+- "Nearby Devices" list is populated with paired devices                    [ ]
+- "Nearby Devices" list is scrollable                                       [ ]
+- Tapping "search" icon in upper-right corner also lists non-paired dev.    [ ]
+- Tapped "search" icon becomes "square"                                     [ ] 
+- Tapping "square" icon in upper-right corner returns list to paired only   [ ]
+- Tapping '<' icon in upper-left corner returns to main screen              [ ]
+- Main screen lists any earlier files still present in cache                [ ]
+- File list on main screen is scrollable                                    [ ]
+- Icon is shown where applicable                                            [ ]
+- Right-swipe on file shows 'delete' icon                                   [ ]
+- Left-swipe on file shows 'share' and 'download' icons                     [ ]
+
+a. Startup without OBEX daemon
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start time: <...>
+End time: <...>
+
+b. Start with OBEX daemon running
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start time: <...>
+End time: <...>
+
+c. Accept incoming file (nominal case)
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start time: <...>
+End time: <...>
+
+d. Accept/Reject successive transfers
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start time: <...>
+End time: <...>
+
+e. Transfer large file
+   ~~~~~~~~~~~~~~~~~~~
+Start time: <...>
+End time: <...>
+
+
+2./ SharePlugin component ('BT Plugin')
+    -----------------------------------
+
