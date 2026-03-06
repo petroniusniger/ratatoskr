@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : obexd.cpp                   Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-02-12
- * Version : 0.0.6
+ * Date    : 2026-03-06
+ * Version : 0.0.7
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -13,6 +13,7 @@
  * - 2026-01-15 (0.0.4) : Fixed to sessionBus() with service discovery.
  * - 2026-01-20 (0.0.5) : Fixed logging message for OBEX service activation.
  * - 2026-02-12 (0.0.6) : Added comments for service discovery and retry logic.
+ * - 2026-03-06 (0.0.7) : Added transfer confirmation (accept/reject) before saving.
  *========================================================*/
 
 #include "obexd.h"
@@ -120,10 +121,42 @@ void Obexd::newTransfer(const QString &path)
     endInsertRows();
     qDebug() << "added to model";
 
-    // TODO: This should show pop up a question whether to accept this transfer.
-    // Given we're an app and not a service at this point, let's just accept it.
-    m_agent->accept(path, targetPath + "/" + t->filename());
+    m_pendingAcceptPaths[path] = targetPath + "/" + t->filename();
+    emit transferNeedsConfirmation(path, t->filename(), t->total());
+}
 
+void Obexd::acceptTransfer(const QString &path)
+{
+    if (!m_pendingAcceptPaths.contains(path)) {
+        qWarning() << "acceptTransfer: unknown path" << path;
+        return;
+    }
+    QString targetFile = m_pendingAcceptPaths.take(path);
+    qDebug() << "accepting transfer" << path << "->" << targetFile;
+    m_agent->accept(path, targetFile);
+}
+
+void Obexd::rejectTransfer(const QString &path)
+{
+    if (!m_pendingAcceptPaths.contains(path)) {
+        qWarning() << "rejectTransfer: unknown path" << path;
+        return;
+    }
+    m_pendingAcceptPaths.remove(path);
+    qDebug() << "rejecting transfer" << path;
+
+    // Remove transfer from model
+    for (int i = 0; i < m_transfers.count(); ++i) {
+        if (m_transfers.at(i)->path() == path) {
+            beginRemoveRows(QModelIndex(), i, i);
+            Transfer *t = m_transfers.takeAt(i);
+            t->deleteLater();
+            endRemoveRows();
+            break;
+        }
+    }
+
+    m_agent->reject(path);
 }
 
 void Obexd::transferProgress()

@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml                    Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-02-17
- * Version : 0.0.2
+ * Date    : 2026-03-06
+ * Version : 0.0.3
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -10,17 +10,83 @@
  * Modification History:
  * - 2025-12-18 (0.0.1) : Adapted from ubtd-20.04.
  * - 2026-02-17 (0.0.2) : Changed app author name to match GitHub account.
+ * - 2026-03-06 (0.0.3) : Added incoming transfer confirmation dialog.
  *========================================================*/
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3
+import Lomiri.Components.Popups 1.3
 import Lomiri.Content 1.3
 import Ratatoskr 1.0
 
 MainView {
     applicationName: "ratatoskr.petroniusniger"
+
+    // Confirmation dialog for incoming Bluetooth transfers
+    Component {
+        id: incomingTransferDialog
+
+        Dialog {
+            id: dialogue
+            property string transferPath: ""
+            property string transferFilename: ""
+            property string transferSize: ""
+
+            title: i18n.tr("Incoming Bluetooth Transfer")
+            text: i18n.tr("A device wants to send you a file.")
+
+            Label {
+                text: i18n.tr("File: <b>%1</b>").arg(dialogue.transferFilename)
+                wrapMode: Text.WordWrap
+                width: parent.width
+            }
+            Label {
+                visible: dialogue.transferSize !== ""
+                text: i18n.tr("Size: %1").arg(dialogue.transferSize)
+                width: parent.width
+            }
+
+            Button {
+                text: i18n.tr("Accept")
+                color: theme.palette.normal.positive
+                width: parent.width
+                onClicked: {
+                    obexd.acceptTransfer(dialogue.transferPath)
+                    PopupUtils.close(dialogue)
+                }
+            }
+            Button {
+                text: i18n.tr("Reject")
+                width: parent.width
+                onClicked: {
+                    obexd.rejectTransfer(dialogue.transferPath)
+                    PopupUtils.close(dialogue)
+                }
+            }
+        }
+    }
+
+    Connections {
+        target: obexd
+        onTransferNeedsConfirmation: {
+            var sizeStr = ""
+            if (size > 0) {
+                if (size >= 1048576)
+                    sizeStr = (size / 1048576).toFixed(1) + " MB"
+                else if (size >= 1024)
+                    sizeStr = (size / 1024).toFixed(1) + " KB"
+                else
+                    sizeStr = size + " B"
+            }
+            PopupUtils.open(incomingTransferDialog, null, {
+                transferPath: path,
+                transferFilename: filename,
+                transferSize: sizeStr
+            })
+        }
+    }
 
 
     width: units.gu(100)
