@@ -1,6 +1,6 @@
 Ratatoskr Project Test Procedure
 ================================
-(pan, 11/03/2026)
+(pan, 12/03/2026)
 
 
 *************************************************************
@@ -255,6 +255,12 @@ Start time: <...>
   - transfer acceptance is logged                                           [ ]
   - incoming file name and size are logged                                  [ ]
   - log does not contain "sanitized" event                                  [ ]
+  > swipe right on the received file, tap 'delete' icon
+  - a confirmation dialog is shown w/ 'OK' and 'Cancel' buttons             [ ]
+  - the dialog shows the correct file name                                  [ ]
+  > tap 'Cancel'
+  - the user is returned to the cached files list                           [ ]
+  - the selected file is still present                                      [ ]
   > open shell, navigate to cache folder:
     '~/.cache/ratatoskr.petroniusniger/HubIncoming/'
   > type 'ls'
@@ -305,14 +311,24 @@ Start time: <...>
 > Terminate 'ratatoskr' and collect relevant journal events
 End time: <...>
 
-i. Delete file from 'ratatoskr' cache
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+i. Delete file(s) from 'ratatoskr' cache
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Start time: <...>
 > Launch 'ratatoskr' app
   - app starts as expected                                                  [ ]
   - journal logs app version string at startup                              [ ]
   > swipe right on one of the listed files, tap 'delete' icon
-  - the file disappears from the list                                       [ ]
+  - a confirmation dialog is shown w/ 'OK' and 'Cancel' buttons             [ ]
+  - the dialog shows the correct file name                                  [ ]
+  > tap 'Cancel'
+  - the user is returned to the cached files list                           [ ]
+  - the selected file is still present                                      [ ]
+  > swipe right on one of the listed files, tap 'delete' icon
+  - a confirmation dialog is shown w/ 'OK' and 'Cancel' buttons             [ ]
+  - the dialog shows the correct file name                                  [ ]
+  > tap 'OK'
+  - the user is returned to the cached files list                           [ ]
+  - the file is no longer present in the list                               [ ]
   > open shell, navigate to cache folder:
     '~/.cache/ratatoskr.petroniusniger/HubIncoming/'
   > list folder content

@@ -1,9 +1,12 @@
 # Changelog for project 'ratatoskr'
-(pan, 10/03/2026)
+(pan, 12/03/2026)
 
 
 ## v0.1.1 (*upcoming*)
 
+- Added confirmation dialog before deleting cached files in main app 
+  (Github [issue #5](https://github.com/petroniusniger/ratatoskr/issues/5)).
+  Updated test procedure accordingly.
 - Reverted the SharePlugin to an unconfined template as the notion that it
   worked with an enforcing AA profile turned out to be wrong. Updated Github
   [issue #7](https://github.com/petroniusniger/ratatoskr/issues/7) accordingly.
