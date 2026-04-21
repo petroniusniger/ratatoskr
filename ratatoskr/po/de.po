@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ratatoskr.petroniusniger package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ratatoskr.petroniusniger\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-21 14:51+0000\n"
+"PO-Revision-Date: 2026-04-21 14:51+0200\n"
+"Last-Translator: Hendrik Buchner <hendrik.buchner@web.de>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: Main.qml:43
+msgid "Incoming Bluetooth Transfer"
+msgstr "Eingehende Bluetooth-Übertragung"
+
+#: Main.qml:44
+msgid "A device wants to send you a file."
+msgstr "Ein Gerät möchte Ihnen eine Datei senden."
+
+#: Main.qml:47
+#, qt-format
+msgid "File: <b>%1</b>"
+msgstr "Datei: <b>%1</b>"
+
+#: Main.qml:53
+#, qt-format
+msgid "Size: %1"
+msgstr "Größe: %1"
+
+#: Main.qml:58
+msgid "Accept"
+msgstr "Annehmen"
+
+#: Main.qml:67
+msgid "Reject"
+msgstr "Ablehnen"
+
+#: Main.qml:86 Main.qml:202
+msgid "Delete"
+msgstr "Löschen"
+
+#: Main.qml:87
+#, qt-format
+msgid "Are you sure you want to permanently delete '%1'?"
+msgstr "Wollen Sie '%1' dauerhaft löschen?"
+
+#: Main.qml:90
+msgid "OK"
+msgstr "OK"
+
+#: Main.qml:99
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: Main.qml:138 ratatoskr.desktop.in:4
+msgid "Bluetooth File Transfer"
+msgstr "Bluetooth-Dateiübertragung"
+
+#: Main.qml:142 Main.qml:399
+msgid "Send File"
+msgstr "Datei senden"
+
+#: Main.qml:166
+msgid "Received Files"
+msgstr "Empfangene Dateien"
+
+#: Main.qml:172
+msgid "Files sent to your Ubuntu Touch device via Bluetooth will appear below."
+msgstr "Die über Bluetooth an Ihr Ubuntu Touch-Gerät gesendeten Dateien werden unten angezeigt."
+
+#: Main.qml:182
+msgid "Transfers:"
+msgstr "Übertragungen:"
+
+#: Main.qml:215
+msgid "Share"
+msgstr "Teilen"
+
+#: Main.qml:226
+msgid "Save"
+msgstr "Speichern"
+
+#: Main.qml:328
+msgid "Waiting..."
+msgstr "Warten…"
+
+#: Main.qml:330 shareplugin/Main.qml:317
+msgid "Transferring..."
+msgstr "Übertragen…"
+
+#: Main.qml:332
+msgid "Paused"
+msgstr "Pausiert"
+
+#: Main.qml:334
+#, qt-format
+msgid "Completed (%1)"
+msgstr "Abgeschlossen (%1)"
+
+#: Main.qml:336
+msgid "Failed"
+msgstr "Mislukt"
+
+#: Main.qml:338
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: Main.qml:350
+msgid "Attachment"
+msgstr "Anhang"
+
+#: Main.qml:403
+msgid "Scan"
+msgstr "Suchen"
+
+#: Main.qml:403
+msgid "Stop Scan"
+msgstr "Suchen abbrechen"
+
+#: Main.qml:425
+msgid "Nearby Devices"
+msgstr "Geräte in der Nähe"
+
+#: Main.qml:431
+msgid "Scanning for devices..."
+msgstr "Suche nach Geräten…"
+
+#: Main.qml:431
+msgid "Tap scan to find nearby Bluetooth devices"
+msgstr "Suchen antippen um Geräte in der Nähe zu finden"
+
+#: Main.qml:472
+msgid "Paired"
+msgstr "Gekoppelt"
+
+#: ratatoskr.desktop.in:3
+msgid "Ratatoskr"
+msgstr "Ratatoskr"
+
+#: shareplugin/Main.qml:72
+msgid "Wrong Launch Method"
+msgstr "Falscher Startaufruf"
+
+#: shareplugin/Main.qml:73
+msgid ""
+"This plugin should not be started directly from the App Drawer.\n"
+"\n"
+"Please use the Share button when viewing a file to send it via Bluetooth."
+msgstr ""
+"Dieses Plugin sollte nicht direkt vom App-Drawer gestartet werden.\n"
+"\n"
+"Bitte nutzen Sie den Share-Button einer Datei, um sie per Bluetooth zu übertragen."
+
+#: shareplugin/Main.qml:76 shareplugin/Main.qml:329
+msgid "Close"
+msgstr "Schließen"
+
+#: shareplugin/Main.qml:212
+msgid "Share via Bluetooth"
+msgstr "Teilen via Bluetooth"
+
+#: shareplugin/Main.qml:315
+msgid "Transfer failed."
+msgstr "Übertragung fehlgeschlagen."
+
+#: shareplugin/Main.qml:316
+msgid "All files transferred."
+msgstr "Alle Dateien übertragen."
+
+#: shareplugin/Main.qml:316
+msgid "File transferred."
+msgstr "Datei übetragen."
