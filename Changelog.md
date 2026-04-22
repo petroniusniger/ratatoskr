@@ -1,6 +1,14 @@
 # Changelog for project 'ratatoskr'
-(pan, 16/04/2026)
+(pan, 22/04/2026)
 
+
+## v0.1.3 (*upcoming*)
+
+- Added recommended Github workflow for project contributors to the README 
+  document.
+- Added OpenStore "badge" to the README document.
+- Added German translation contributed by buchnerh (Github 
+  [issue #31](https://github.com/petroniusniger/ratatoskr/issues/31)).
 
 ## v0.1.2 (Apr. 16, 2026)
 

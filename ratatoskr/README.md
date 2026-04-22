@@ -14,6 +14,9 @@ the eagles perched atop it and the dragon Níðhöggr who dwells beneath
 the roots of the tree. He seemed to me like a worthy companion to Harald 
 Bluetooth (hoping he doesn't distort your files too much) ;-)
 
+Install it from the OpenStore:  
+[![OpenStore](https://next.open-store.io/badges/en_US.png)](https://next.open-store.io/app/ratatoskr.petroniusniger/)
+
 ## Features
 
 - **Send files** via Bluetooth using OBEX Object Push Profile (OPP)
@@ -98,6 +101,19 @@ clickable desktop
 ## Support
 
 Report issues at: [GitHub 'ratatoskr' project](https://github.com/petroniusniger/ratatoskr)
+
+## Contributing to the project
+
+Please follow the workflow described below:
+
+- [Create an issue](https://github.com/petroniusniger/ratatoskr/issues/new/choose)
+  that describes your problem or new feature (if the scope is obvious, filling 
+  the title field is enough)
+- from the issue page, create a branch (in the right-side menu)
+- clone project, checkout branch, edit, git add, git commit, git push...
+- when your modifications are ready, create a pull request for your branch
+  - in the description field, type "closes #<issue-nr>"
+- I will be notified, review your changes and merge them to 'main'
 
 ## License
 
