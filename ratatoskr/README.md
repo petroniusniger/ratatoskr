@@ -112,7 +112,7 @@ Please follow the workflow described below:
 - from the issue page, create a branch (in the right-side menu)
 - clone project, checkout branch, edit, git add, git commit, git push...
 - when your modifications are ready, create a pull request for your branch
-  - in the description field, type "closes #<issue-nr>"
+  - in the PR description field, type "closes #<issue-nr\>"
 - I will be notified, review your changes and merge them to 'main'
 
 ## License
