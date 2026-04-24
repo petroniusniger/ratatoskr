@@ -1,9 +1,12 @@
 # Changelog for project 'ratatoskr'
-(pan, 22/04/2026)
+(pan, 24/04/2026)
 
 
 ## v0.1.3 (*upcoming*)
 
+- Updated test procedure to include a bandwidth measurement step in the 
+  outbound direction as well, following a UT forum post by domubpkm (Github 
+  [issue #32](https://github.com/petroniusniger/ratatoskr/issues/32)).
 - Added recommended Github workflow for project contributors to the README 
   document.
 - Added OpenStore "badge" to the README document.
