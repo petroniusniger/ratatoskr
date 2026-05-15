@@ -1,9 +1,13 @@
 # Changelog for project 'ratatoskr'
-(pan, 24/04/2026)
+(pan, 15/05/2026)
 
 
 ## v0.1.3 (*upcoming*)
 
+- Updated `./ratatoskr/shareplugin/bluetooth-contenthub.json` to have the 
+  SharePlugin register as handler for all file types (Github 
+  [issue #34](https://github.com/petroniusniger/ratatoskr/issues/34)).
+  Updated test procedure accordingly.
 - Updated test procedure to include a bandwidth measurement step in the 
   outbound direction as well, following a UT forum post by domubpkm (Github 
   [issue #32](https://github.com/petroniusniger/ratatoskr/issues/32)).

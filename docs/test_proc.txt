@@ -1,6 +1,6 @@
 Ratatoskr Project Test Procedure
 ================================
-(pan, 24/04/2026)
+(pan, 15/05/2026)
 
 
 *************************************************************
@@ -343,7 +343,7 @@ h. Correct file-type icons displayed
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Start time: <...>
 > Launch 'ratatoskr' app after having received at least one file of each main 
-  type (image, PDF, audio, video, archive, text)
+  type (image, PDF, audio, video, archive, text, raw binary)
   - app starts as expected                                                  [ ]
   - journal logs app version string at startup                              [ ]
   - for each file in the list, icon is expected one                         [ ]
@@ -688,6 +688,33 @@ Start time: <...>
   - 'BT Plugin' terminates, user is returned to 'File Manager'              [ ]
 > Terminate 'File Manager', disconnect laptop, collect relevant journal events 
   and revert phone language setting 
+End time: <...>
+
+i. Share file of unknown type
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start time: <...>
+> Using 'System Settings', connect laptop via Bluetooth
+> Launch 'ratatoskr' main app, swipe left raw binary file transferred earlier, 
+  tap 'Share' icon 
+  - 'BT Plugin' icon appears in the "Share to" dialog                       [ ]
+  > tap 'BT Plugin' icon
+  - the 'Share via Bluetooth' plugin starts as expected                     [ ]
+  - journal logs app version string at startup                              [ ]
+  - neighbouring device list starts populating                              [ ]
+  - newly discovered devices are logged by MAC                              [ ]
+  - resolved name is logged for each newly discovered device                [ ]
+  - devices whose name is based on MAC are skipped                          [ ]
+  > tap laptop name in device list
+  - name and full path of file to be shared (from cache) is logged          [ ]
+  - MAC addresss of target device is logged                                 [ ]
+  - confirmation dialog pops-up on laptop                                   [ ]
+  > click "Accept"
+  - "Transferring..." message + progress bar diplayed on phone              [ ]
+  - successful transfer is confirmed on laptop                              [ ]
+  - "File transferred" message displayed on phone                           [ ]
+  > tap "Close" button
+  - 'BT Plugin' terminates, user is returned to 'File Manager'              [ ]
+> Terminate 'File Manager' and collect relevant journal events
 End time: <...>
 
 
