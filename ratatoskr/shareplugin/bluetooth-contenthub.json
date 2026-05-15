@@ -1,10 +1,4 @@
 {
-    "share": [
-        "documents",
-        "pictures",
-        "music",
-        "contacts",
-        "videos"
-    ]
+    "share": "all"
 }
 
