@@ -1,6 +1,14 @@
 {
     "share": [
-        "all"
+        "documents", 
+        "pictures", 
+        "music", 
+        "contacts",
+        "videos", 
+        "links", 
+        "text", 
+        "ebooks", 
+        "unknown"
     ]
 }
 
