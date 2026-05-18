@@ -1,8 +1,8 @@
 /*==========================================================
  * Program : Main.qml                    Project : ratatoskr
  * Author  : Michael Zanetti, Ian L., Philippe Andersson
- * Date    : 2026-04-01
- * Version : 0.0.5
+ * Date    : 2026-05-18
+ * Version : 0.0.6
  * Notice  : (c) Original work by Michael Zanetti, Canonical
  *           Adapted by Ian L. and Philippe Andersson
  * License : GNU GPL v3 or later
@@ -17,6 +17,10 @@
  * - 2026-04-01 (0.0.5) : Wrapped transfer status strings in i18n.tr() 
  *   (issue #20). Fixed typo "Uunknown" -> "Unknown". Changed "Completed" 
  *   to use i18n.tr() with %1 placeholder.
+ * - 2026-05-18 (0.0.6) : Use ContentType.Documents instead of
+ *   ContentType.Unknown for unrecognized file types, to work around
+ *   ContentHub limitation where share handlers are never found for
+ *   Unknown type (issue #34).
  *========================================================*/
 
 import QtQuick 2.4
@@ -267,7 +271,7 @@ MainView {
                                     case "gzip":
                                     case "zip":
                                     case "xz":
-                                        listItem.contentType = ContentType.Unknown;
+                                        listItem.contentType = ContentType.Documents;
                                         return "application-x-archive-symbolic";
                                     case "mp3":
                                     case "ogg":
@@ -284,7 +288,7 @@ MainView {
                                         return "image-x-generic-symbolic";
                                     case "click":
                                     case "deb":
-                                        listItem.contentType = ContentType.Unknown;
+                                        listItem.contentType = ContentType.Documents;
                                         return "package-x-generic-symbolic";
                                     case "txt":
                                         listItem.contentType = ContentType.Text;
@@ -297,7 +301,7 @@ MainView {
                                         listItem.contentType = ContentType.Videos;
                                         return "video-x-generic-symbolic";
                                     default:
-                                        listItem.contentType = ContentType.Unknown;
+                                        listItem.contentType = ContentType.Documents;
                                         return "empty-symbolic";
                                     }
                                 }
