@@ -1,8 +1,8 @@
 # Changelog for project 'ratatoskr'
-(pan, 24/04/2026)
+(pan, 24/06/2026)
 
 
-## v0.1.3 (*upcoming*)
+## v0.1.3 (Jun. 24, 2026)
 
 - Updated test procedure to include a bandwidth measurement step in the 
   outbound direction as well, following a UT forum post by domubpkm (Github 
